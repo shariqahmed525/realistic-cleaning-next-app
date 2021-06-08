@@ -2,7 +2,7 @@ const colors = {
     primary: "#3490dc",
     secondary: "#ffed4a",
     danger: "#e3342f",
-    "my-theme": "#502649",
+    "my-theme": "#232547",
 };
 
 module.exports = {

@@ -67,7 +67,7 @@ const Home = () => {
                 style={{ backgroundImage: "url('/images/bg.webp')" }}
                 className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-evenly min-h-screen bg-no-repeat bg-cover bg-opacity-50 p-10"
             >
-                <div className="flex flex-0 md:flex-1 max-w-3xl items-center md:items-start flex-col mt-10 mr-0 sm:mr-7">
+                <div className="flex flex-0 md:flex-1 max-w-3xl items-center md:items-start flex-col mt-20 mr-0 sm:mr-7">
                     <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center md:text-left text-white">
                         Realistic Cleaning
                     </h2>
