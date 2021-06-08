@@ -24,16 +24,18 @@ const Home = () => {
             </Head>
             <navbar
                 className={`
-                 fixed top-0 w-full px-10 lg:px-14 xl:px-20 flex flex-row justify-between items-center transition-all duration-300 ease-in-out ${
-                     scrolled ? "bg-my-theme py-3.5" : "py-5 bg-transparent"
+                 fixed top-0 w-full px-5 sm:px-10 lg:px-14 xl:px-20 flex flex-row justify-between items-center transition-all duration-300 ease-in-out ${
+                     scrolled
+                         ? "bg-white py-3.5 shadow-lg"
+                         : "py-5 bg-transparent"
                  }
               `}
             >
                 <img
                     alt="logo"
                     src="/images/logo.webp"
-                    className={`w-24 transition-all duration-300 ease-in-out lg:${
-                        scrolled ? "w-26" : "w-28"
+                    className={`w-20 sm:w-24 transition-all duration-300 ease-in-out ${
+                        scrolled ? "lg:w-26" : "lg:w-28"
                     }`}
                 />
                 <nav className="hidden md:flex md:flex-1 justify-end items-center">
@@ -42,9 +44,9 @@ const Home = () => {
                             <li
                                 key={i}
                                 className={`list-none px-4 py-2 transition-all duration-300 ease-in-out ${
-                                    scrolled ? "text-white" : "text-white"
-                                } text-lg lg:${
-                                    scrolled ? "text-lg" : "text-xl"
+                                    scrolled ? "text-my-theme" : "text-white"
+                                } text-lg md:text-base ${
+                                    scrolled ? "lg:text-lg" : "lg:text-xl"
                                 }`}
                             >
                                 <a className="no-underline" href="#">
@@ -56,18 +58,32 @@ const Home = () => {
                 </nav>
                 <button
                     type="button"
-                    className="block md:hidden border border-white p-2.5"
+                    className={`block md:hidden border ${
+                        scrolled ? "border-my-theme" : "border-white"
+                    } p-2.5 transition-all duration-300 ease-in-out`}
                 >
-                    <span className="icon-bar mb-1"></span>
-                    <span className="icon-bar mb-1"></span>
-                    <span className="icon-bar"></span>
+                    <span
+                        className={`transition-all duration-300 ease-in-out ${
+                            scrolled ? "bg-my-theme" : "bg-white"
+                        } icon-bar mb-1`}
+                    ></span>
+                    <span
+                        className={`transition-all duration-300 ease-in-out ${
+                            scrolled ? "bg-my-theme" : "bg-white"
+                        } icon-bar mb-1`}
+                    ></span>
+                    <span
+                        className={`transition-all duration-300 ease-in-out ${
+                            scrolled ? "bg-my-theme" : "bg-white"
+                        } icon-bar `}
+                    ></span>
                 </button>
             </navbar>
             <div
                 style={{ backgroundImage: "url('/images/bg.webp')" }}
                 className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-evenly min-h-screen bg-no-repeat bg-cover bg-opacity-50 p-10"
             >
-                <div className="flex flex-0 md:flex-1 max-w-3xl items-center md:items-start flex-col mt-20 mr-0 sm:mr-7">
+                <div className="flex flex-0 md:flex-1 max-w-3xl items-center md:items-start flex-col mt-24 md:mt-0 mr-0 sm:mr-7">
                     <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center md:text-left text-white">
                         Realistic Cleaning
                     </h2>
@@ -83,54 +99,74 @@ const Home = () => {
                         </p>
                     </div>
                 </div>
-                <div className="flex flex-0 md:flex-1 w-full md:w-auto max-w-3xl flex-col bg-white p-5 md:p-7 xl:p-10 mt-3">
+                <div className="flex flex-0 md:flex-1 w-full md:w-auto max-w-2xl flex-col bg-white border border-white p-5 md:p-7 xl:p-10 mt-3">
                     <p className="font-bold text-xl md:text-2xl xl:text-4xl text-my-theme">
                         Get A Free Quote
                     </p>
                     <form className="flex flex-col justify-center mt-4 md:mt-5 xl:mt-6">
                         <div className="flex flex-1 flex-col mb-4">
-                            <label htmlFor="name" className="mb-2">
+                            <label
+                                htmlFor="name"
+                                className="mb-2 text-my-theme font-medium"
+                            >
                                 Name
                             </label>
                             <input
                                 id="name"
                                 type="text"
-                                placeholder="Enter your name"
+                                placeholder="John Doe"
                                 className="border-2 border-gray-200 px-5 py-3"
                             />
                         </div>
                         <div className="flex flex-1 flex-col mb-4">
-                            <label htmlFor="name" className="mb-2">
-                                Contact No.
+                            <label
+                                htmlFor="name"
+                                className="mb-2 text-my-theme font-medium"
+                            >
+                                Contact Info
                             </label>
                             <input
                                 id="contact"
                                 type="text"
-                                placeholder="Enter your contact no."
+                                placeholder="647-789-3000"
                                 className="border-2 border-gray-200 px-5 py-3 flex flex-1"
                             />
                         </div>
                         <div className="flex flex-1 flex-col mb-4">
-                            <label htmlFor="postal" className="mb-2">
-                                Postal Code
+                            <label
+                                htmlFor="city"
+                                className="mb-2 text-my-theme font-medium"
+                            >
+                                City/Town Name
                             </label>
                             <input
-                                id="postal"
+                                id="city"
                                 type="text"
-                                placeholder="Enter postal here"
+                                placeholder="Toronto, ON"
                                 className="border-2 border-gray-200 px-5 py-3 flex flex-1"
                             />
                         </div>
-                        <div className="flex flex-1 flex-col">
-                            <label htmlFor="clean" className="mb-2">
+                        <div className="flex flex-1 flex-col mb-4">
+                            <label
+                                htmlFor="clean"
+                                className="mb-2 text-my-theme font-medium"
+                            >
                                 What to clean?
                             </label>
                             <textarea
                                 id="clean"
                                 rows={3}
+                                placeholder="What would you like to clean?"
                                 className="border-2 border-gray-200 px-5 py-3 flex flex-1"
-                                placeholder="2 bedrooms, 10 steps of stairs, 5 seating units on sectional couch and hallway"
                             ></textarea>
+                        </div>
+                        <div className="flex flex-1 flex-col mt-2">
+                            <button
+                                type="submit"
+                                className="border-2 border-my-theme bg-my-theme cursor-pointer px-5 py-3 flex justify-center text-white items-center flex-1 text-base sm:text-lg xl:text-xl font-semibold"
+                            >
+                                SUBMIT
+                            </button>
                         </div>
                     </form>
                 </div>

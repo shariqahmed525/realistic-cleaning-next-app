@@ -2,8 +2,8 @@ const colors = {
     primary: "#3490dc",
     secondary: "#ffed4a",
     danger: "#e3342f",
-    "my-theme": "hsl(254deg 22% 20%)",
-    // "my-theme": "#232547",
+    // "my-theme": "#02c0a8",
+    "my-theme": "#0898af",
 };
 
 module.exports = {
