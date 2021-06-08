@@ -18,9 +18,6 @@ module.exports = {
             ...colors,
         }),
         extend: {
-            backgroundImage: (theme) => ({
-                "bg-img": "url('/img/bg.webp')",
-            }),
             colors: {
                 ...colors,
             },
