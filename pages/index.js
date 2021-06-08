@@ -115,7 +115,7 @@ const Home = () => {
                                 id="name"
                                 type="text"
                                 placeholder="John Doe"
-                                className="border-2 border-gray-200 px-5 py-3"
+                                className="border-2 border-gray-200 px-3 sm:px-5 py-2 sm:py-3"
                             />
                         </div>
                         <div className="flex flex-1 flex-col mb-4">
@@ -129,7 +129,7 @@ const Home = () => {
                                 id="contact"
                                 type="text"
                                 placeholder="647-789-3000"
-                                className="border-2 border-gray-200 px-5 py-3 flex flex-1"
+                                className="border-2 border-gray-200 px-3 sm:px-5 py-2 sm:py-3"
                             />
                         </div>
                         <div className="flex flex-1 flex-col mb-4">
@@ -143,7 +143,7 @@ const Home = () => {
                                 id="city"
                                 type="text"
                                 placeholder="Toronto, ON"
-                                className="border-2 border-gray-200 px-5 py-3 flex flex-1"
+                                className="border-2 border-gray-200 px-3 sm:px-5 py-2 sm:py-3"
                             />
                         </div>
                         <div className="flex flex-1 flex-col mb-4">
@@ -157,13 +157,13 @@ const Home = () => {
                                 id="clean"
                                 rows={3}
                                 placeholder="What would you like to clean?"
-                                className="border-2 border-gray-200 px-5 py-3 flex flex-1"
+                                className="border-2 border-gray-200 px-3 sm:px-5 py-2 sm:py-3"
                             ></textarea>
                         </div>
                         <div className="flex flex-1 flex-col mt-2">
                             <button
                                 type="submit"
-                                className="border-2 border-my-theme bg-my-theme cursor-pointer px-5 py-3 flex justify-center text-white items-center flex-1 text-base sm:text-lg xl:text-xl font-semibold"
+                                className="border-2 border-my-theme bg-my-theme cursor-pointer px-3 sm:px-5 py-2 sm:py-3 flex justify-center text-white items-center flex-1 text-base sm:text-lg xl:text-xl font-semibold"
                             >
                                 SUBMIT
                             </button>
