@@ -3,7 +3,9 @@ const colors = {
     secondary: "#ffed4a",
     danger: "#e3342f",
     // "my-theme": "#02c0a8",
-    "my-theme": "#0898af",
+    // "my-theme": "#0898af",
+    "my-theme": "#305454",
+    "my-theme-bg": "darkslategray",
 };
 
 module.exports = {

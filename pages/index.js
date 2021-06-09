@@ -16,6 +16,10 @@ const Home = () => {
         }
     }, []);
 
+    const onSubmit = (e) => {
+        e && e.preventDefault();
+    };
+
     return (
         <>
             <Head>
@@ -26,7 +30,7 @@ const Home = () => {
                 className={`
                  fixed top-0 w-full px-5 sm:px-10 lg:px-14 xl:px-20 flex flex-row justify-between items-center transition-all duration-300 ease-in-out ${
                      scrolled
-                         ? "bg-white py-3.5 shadow-lg"
+                         ? "bg-my-theme-bg py-3.5 shadow-lg"
                          : "py-5 bg-transparent"
                  }
               `}
@@ -44,7 +48,7 @@ const Home = () => {
                             <li
                                 key={i}
                                 className={`list-none px-4 py-2 transition-all duration-300 ease-in-out ${
-                                    scrolled ? "text-my-theme" : "text-white"
+                                    scrolled ? "text-white" : "text-white"
                                 } text-lg md:text-base ${
                                     scrolled ? "lg:text-lg" : "lg:text-xl"
                                 }`}
@@ -58,24 +62,16 @@ const Home = () => {
                 </nav>
                 <button
                     type="button"
-                    className={`block md:hidden border ${
-                        scrolled ? "border-my-theme" : "border-white"
-                    } p-2.5 transition-all duration-300 ease-in-out`}
+                    className={`block md:hidden border border-white p-2.5 transition-all duration-300 ease-in-out`}
                 >
                     <span
-                        className={`transition-all duration-300 ease-in-out ${
-                            scrolled ? "bg-my-theme" : "bg-white"
-                        } icon-bar mb-1`}
+                        className={`transition-all duration-300 ease-in-out bg-white icon-bar mb-1`}
                     ></span>
                     <span
-                        className={`transition-all duration-300 ease-in-out ${
-                            scrolled ? "bg-my-theme" : "bg-white"
-                        } icon-bar mb-1`}
+                        className={`transition-all duration-300 ease-in-out bg-white icon-bar mb-1`}
                     ></span>
                     <span
-                        className={`transition-all duration-300 ease-in-out ${
-                            scrolled ? "bg-my-theme" : "bg-white"
-                        } icon-bar `}
+                        className={`transition-all duration-300 ease-in-out bg-white icon-bar`}
                     ></span>
                 </button>
             </navbar>
@@ -103,11 +99,14 @@ const Home = () => {
                     <p className="font-bold text-xl md:text-2xl xl:text-4xl text-my-theme">
                         Get A Free Quote
                     </p>
-                    <form className="flex flex-col justify-center mt-4 md:mt-5 xl:mt-6">
+                    <form
+                        onSubmit={onSubmit}
+                        className="flex flex-col justify-center mt-4 md:mt-5 xl:mt-6"
+                    >
                         <div className="flex flex-1 flex-col mb-4">
                             <label
                                 htmlFor="name"
-                                className="mb-2 text-my-theme font-medium"
+                                className="mb-2 text-gray-500 font-medium"
                             >
                                 Name
                             </label>
@@ -121,7 +120,7 @@ const Home = () => {
                         <div className="flex flex-1 flex-col mb-4">
                             <label
                                 htmlFor="name"
-                                className="mb-2 text-my-theme font-medium"
+                                className="mb-2 text-gray-500 font-medium"
                             >
                                 Contact Info
                             </label>
@@ -135,7 +134,7 @@ const Home = () => {
                         <div className="flex flex-1 flex-col mb-4">
                             <label
                                 htmlFor="city"
-                                className="mb-2 text-my-theme font-medium"
+                                className="mb-2 text-gray-500 font-medium"
                             >
                                 City/Town Name
                             </label>
@@ -149,9 +148,9 @@ const Home = () => {
                         <div className="flex flex-1 flex-col mb-4">
                             <label
                                 htmlFor="clean"
-                                className="mb-2 text-my-theme font-medium"
+                                className="mb-2 text-gray-500 font-medium"
                             >
-                                What to clean?
+                                What To Clean?
                             </label>
                             <textarea
                                 id="clean"
@@ -163,7 +162,7 @@ const Home = () => {
                         <div className="flex flex-1 flex-col mt-2">
                             <button
                                 type="submit"
-                                className="border-2 border-my-theme bg-my-theme cursor-pointer px-3 sm:px-5 py-2 sm:py-3 flex justify-center text-white items-center flex-1 text-base sm:text-lg xl:text-xl font-semibold"
+                                className="border-2 border-my-theme bg-my-theme cursor-pointer px-3 sm:px-5 py-2 sm:py-2.5 flex justify-center text-white items-center flex-1 text-base sm:text-lg xl:text-xl font-semibold"
                             >
                                 SUBMIT
                             </button>
