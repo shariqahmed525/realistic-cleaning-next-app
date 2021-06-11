@@ -4,3 +4,28 @@
     display: block;
     border-radius: 1px;
 }
+.show {
+    overflow: auto;
+    max-height: 500px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+}
+.show::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+    background: transparent;
+}
+.showMenu {
+    display: block;
+}
+@media screen and (min-width: 768px) {
+    .showMenu {
+        display: none !important;
+    }
+    .show {
+        max-height: unset;
+    }
+}
