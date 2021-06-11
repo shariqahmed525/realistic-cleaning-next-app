@@ -21,7 +21,7 @@ const Banner = ({ navRef }) => {
     return (
         <div
             style={{
-                paddingTop: 60,
+                paddingTop: 100,
                 backgroundImage: "url('/images/bg.webp')",
             }}
             className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-evenly min-h-screen bg-no-repeat bg-cover bg-opacity-50 px-5 md:px-0"
