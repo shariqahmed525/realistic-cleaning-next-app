@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect, forwardRef } from "react";
 const menus = ["Home", "Services", "Testimonials", "FAQ", "Contact Us"];
 
-const Navbar = forwardRef((_, ref) => {
+const Navbar = forwardRef(() => {
     let navRef = useRef(null);
     let toggleMenuRef = useRef(null);
     const [scrolled, setScrolled] = useState(false);
@@ -13,7 +13,6 @@ const Navbar = forwardRef((_, ref) => {
                 setScrolled(window.pageYOffset > checkWindowWidth);
             });
         }
-        ref.current = toggleMenuRef.current;
     }, []);
 
     const onMenuToggle = () => {
@@ -25,6 +24,7 @@ const Navbar = forwardRef((_, ref) => {
         <navbar
             id="fixed"
             ref={toggleMenuRef}
+            style={{ zIndex: 1000 }}
             className={`
                  fixed top-0 w-full px-5 sm:px-10 lg:px-14 xl:px-20 flex flex-col md:flex-row justify-between items-center transition-all duration-300 ease-in-out bg-my-theme-bg shadow-lg ${
                      scrolled

@@ -1,9 +1,8 @@
 const colors = {
     primary: "#3490dc",
-    secondary: "#ffed4a",
     danger: "#e3342f",
-    // "my-theme": "#02c0a8",
-    // "my-theme": "#0898af",
+    "my-gray": "#f1f3f7",
+    secondary: "#ffed4a",
     "my-theme": "#305454",
     "my-theme-bg": "darkslategray",
 };
