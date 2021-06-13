@@ -31,10 +31,11 @@ const Services = () => {
                         </span>
                     </h2>
                     <p className="mt-6 font-base text-lg md:text-xl text-center text-black max-w-2xl md:max-w-3xl">
-                        We provide professional &amp; quality cleaning services.
-                        Our technicians are equipped with the most advanced
+                        We provide professional and quality cleaning services.
+                        Our technicians are equipped with the most advance
                         machinery to provide carpet and upholstery steam
-                        cleaning.
+                        cleaning. We use eco-friendly, green-certified cleaning
+                        products.
                     </p>
                 </div>
             </div>

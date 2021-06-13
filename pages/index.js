@@ -1,6 +1,13 @@
 import Head from "next/head";
-// import Image from "next/image";
-import { Navbar, Banner, Services, ServicesWeOffer } from "../components";
+import {
+    FAQ,
+    Navbar,
+    Banner,
+    Services,
+    WhatsImportant,
+    ServicesWeOffer,
+    ServicesIncludes,
+} from "../components";
 const Home = () => {
     return (
         <>
@@ -12,6 +19,9 @@ const Home = () => {
             <Banner />
             <Services />
             <ServicesWeOffer />
+            <ServicesIncludes />
+            <WhatsImportant />
+            <FAQ />
         </>
     );
 };
