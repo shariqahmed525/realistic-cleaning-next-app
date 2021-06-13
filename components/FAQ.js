@@ -7,9 +7,12 @@ const config = {
 };
 
 const styles = {
-    arrowColor: "red",
     rowTitleColor: "#305454",
+    rowTitleTextSize: "medium",
     rowContentColor: "#212121",
+    rowContentTextSize: "15px",
+    rowContentPaddingTop: "7px",
+    rowContentPaddingBottom: "15px",
 };
 
 const faqs = [

@@ -25,6 +25,11 @@
     border: medium none;
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
 }
+
+.row-title-text {
+    font-weight: 400 !important;
+}
+
 @media screen and (min-width: 768px) {
     .showMenu {
         display: none !important;
