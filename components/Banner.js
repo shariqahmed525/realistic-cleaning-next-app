@@ -1,4 +1,5 @@
 import React from "react";
+// import ReactTooltip from "react-tooltip";
 
 const Banner = () => {
     const onSubmit = (e) => {
@@ -17,9 +18,18 @@ const Banner = () => {
                     Realistic Cleaning
                 </h2>
                 <p className="mt-5 text-lg xl:text-xl text-center md:text-left text-white">
-                    We provide professional &amp; quality cleaning services. Our
-                    technicians are equipped with the most advanced machinery to
-                    provide carpet and upholstery steam cleaning.
+                    Realistic Cleaning is a professional carpet cleaning company
+                    specializing in residential and commercial carpet and
+                    furniture steam cleaning services. We are experts in carpet
+                    cleaning, furniture cleaning and area rug cleaning with over
+                    10 years of experience.We are open for business as usual
+                    adhering to social distancing measure.
+                </p>
+                <p className="mt-5 text-lg xl:text-xl text-center md:text-left text-white">
+                    PLEASE CALL{" "}
+                    <a className="font-bold text-2xl" href="tel:289-812-3444">
+                        289-812-3444
+                    </a>
                 </p>
                 <div className="py-3 w-40 bg-my-theme flex justify-center items-center cursor-pointer my-7">
                     <p className="text-white uppercase text-center font-semibold">
@@ -82,7 +92,24 @@ const Banner = () => {
                             htmlFor="clean"
                             className="mb-2 text-gray-500 font-medium"
                         >
-                            What To Clean?
+                            {/* <ReactTooltip
+                                id="estimate"
+                                type="light"
+                                effect="solid"
+                            >
+                                <span>
+                                    To generate an estimate we need to know no.
+                                    of rugs, bedrooms, living rooms, steps of
+                                    stairs, hallways, need measurements (for
+                                    open spaces like basement), how many seating
+                                    units (for couches/sofas) &amp; size of
+                                    mattress (king, queen, single or double).
+                                </span>
+                            </ReactTooltip> */}
+                            What To Clean?{" "}
+                            {/* <span data-tip data-for="estimate">
+                                I
+                            </span> */}
                         </label>
                         <textarea
                             id="clean"
