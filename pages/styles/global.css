@@ -21,6 +21,10 @@
 .showMenu {
     display: block;
 }
+.testimonial-box {
+    border: medium none;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+}
 @media screen and (min-width: 768px) {
     .showMenu {
         display: none !important;

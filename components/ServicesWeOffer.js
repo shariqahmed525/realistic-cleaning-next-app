@@ -33,7 +33,7 @@ const ServicesWeOffer = () => {
             <p className="mt-2 font-medium text-lg xl:text-xl text-center text-gray-700">
                 Commercial and Residential Cleaning Services
             </p>
-            <div className="grid grid-cols-4 gap-4 mt-5 md:mt-10 w-full sm:w-11/12 md:w-full xl:w-11/12">
+            <div className="grid grid-cols-4 gap-4 mt-5 md:mt-10 w-full sm:w-11/12 md:w-full xl:w-10/12">
                 {servicesWeOffer.map((v, i) => (
                     <div
                         key={i}

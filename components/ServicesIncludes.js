@@ -30,7 +30,7 @@ const ServicesIncludes = () => {
             <h2 className="font-bold text-2xl sm:text-3xl xl:text-4xl text-center text-black uppercase">
                 Services Includes
             </h2>
-            <div className="grid grid-cols-4 gap-4 mt-3 md:mt-7 w-full sm:w-11/12 md:w-full xl:w-11/12">
+            <div className="grid grid-cols-4 gap-4 mt-3 md:mt-7 w-full sm:w-11/12 md:w-full xl:w-10/12">
                 {servicesWeOffer.map((v, i) => (
                     <div
                         key={i}
