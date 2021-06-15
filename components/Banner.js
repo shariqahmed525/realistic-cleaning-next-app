@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 
 const Banner = () => {
@@ -11,6 +11,21 @@ const Banner = () => {
     const onTooltipToggle = () => {
         tooltipMenuRef.current.classList.toggle("visible");
     };
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                tooltipMenuRef.current &&
+                !tooltipMenuRef.current.contains(event.target)
+            ) {
+                tooltipMenuRef.current.classList.remove("visible");
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [tooltipMenuRef]);
 
     return (
         <div
