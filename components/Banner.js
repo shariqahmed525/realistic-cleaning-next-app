@@ -1,10 +1,17 @@
-import React from "react";
-// import ReactTooltip from "react-tooltip";
+import React, { useRef } from "react";
+import Image from "next/image";
 
 const Banner = () => {
+    let tooltipMenuRef = useRef(null);
+
     const onSubmit = (e) => {
         e && e.preventDefault();
     };
+
+    const onTooltipToggle = () => {
+        tooltipMenuRef.current.classList.toggle("visible");
+    };
+
     return (
         <div
             style={{
@@ -90,27 +97,34 @@ const Banner = () => {
                     <div className="flex flex-1 flex-col mb-4">
                         <label
                             htmlFor="clean"
-                            className="mb-2 text-gray-500 font-medium"
+                            className="mb-2 text-gray-500 font-medium z-50"
                         >
-                            {/* <ReactTooltip
-                                id="estimate"
-                                type="light"
-                                effect="solid"
-                            >
-                                <span>
-                                    To generate an estimate we need to know no.
-                                    of rugs, bedrooms, living rooms, steps of
-                                    stairs, hallways, need measurements (for
-                                    open spaces like basement), how many seating
-                                    units (for couches/sofas) &amp; size of
-                                    mattress (king, queen, single or double).
-                                </span>
-                            </ReactTooltip> */}
                             What To Clean?{" "}
-                            {/* <span data-tip data-for="estimate">
-                                I
-                            </span> */}
+                            <div className="tooltip">
+                                <Image
+                                    width="16"
+                                    height="16"
+                                    src="/images/info.png"
+                                    onClick={onTooltipToggle}
+                                />
+                                <div
+                                    ref={tooltipMenuRef}
+                                    className="right text-white"
+                                >
+                                    <div className="text-content">
+                                        To generate an estimate we need to know
+                                        no. of rugs, bedrooms, living rooms,
+                                        steps of stairs, hallways, need
+                                        measurements (for open spaces like
+                                        basement), how many seating units (for
+                                        couches/sofas) &amp; size of mattress
+                                        (king, queen, single or double).
+                                    </div>
+                                    <i></i>
+                                </div>
+                            </div>
                         </label>
+                        <p className="text-gray-400 mb-2"></p>
                         <textarea
                             id="clean"
                             rows={3}
