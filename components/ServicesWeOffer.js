@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Element } from "react-scroll";
 
 const servicesWeOffer = [
     {
@@ -26,33 +27,35 @@ const servicesWeOffer = [
 
 const ServicesWeOffer = () => {
     return (
-        <div className="bg-my-gray py-10 md:py-16 px-5 flex flex-col justify-center items-center">
-            <h2 className="font-bold text-2xl sm:text-3xl xl:text-4xl text-center text-black uppercase">
-                Services We Offer
-            </h2>
-            <p className="mt-2 font-medium text-lg xl:text-xl text-center text-gray-700">
-                Commercial and Residential Cleaning Services
-            </p>
-            <div className="grid grid-cols-4 gap-4 mt-5 md:mt-10 w-full sm:w-11/12 md:w-full xl:w-10/12">
-                {servicesWeOffer.map((v, i) => (
-                    <div
-                        key={i}
-                        className="col-span-4 sm:col-span-2 lg:col-span-1 flex flex-col justify-center items-center p-5"
-                    >
-                        <Image
-                            width={200}
-                            height={200}
-                            src={v.image}
-                            className="rounded-full"
-                        />
-                        <p className="text-center mt-5 font-bold text-xl md:text-2xl">
-                            {v.name}
-                        </p>
-                        <p className="text-center mt-4">{v.text}</p>
-                    </div>
-                ))}
+        <Element name="services">
+            <div className="bg-my-gray py-10 md:py-16 px-5 flex flex-col justify-center items-center">
+                <h2 className="font-bold text-2xl sm:text-3xl xl:text-4xl text-center text-black uppercase">
+                    Services We Offer
+                </h2>
+                <p className="mt-2 font-medium text-lg xl:text-xl text-center text-gray-700">
+                    Commercial and Residential Cleaning Services
+                </p>
+                <div className="grid grid-cols-4 gap-4 mt-5 md:mt-10 w-full sm:w-11/12 md:w-full xl:w-10/12">
+                    {servicesWeOffer.map((v, i) => (
+                        <div
+                            key={i}
+                            className="col-span-4 sm:col-span-2 lg:col-span-1 flex flex-col justify-center items-center p-5"
+                        >
+                            <Image
+                                width={200}
+                                height={200}
+                                src={v.image}
+                                className="rounded-full"
+                            />
+                            <p className="text-center mt-5 font-bold text-xl md:text-2xl">
+                                {v.name}
+                            </p>
+                            <p className="text-center mt-4">{v.text}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </Element>
     );
 };
 

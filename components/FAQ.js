@@ -1,5 +1,6 @@
 import React from "react";
 import Faq from "react-faq-component";
+import { Element } from "react-scroll";
 
 const config = {
     animate: true,
@@ -71,25 +72,27 @@ const faqs = [
 
 const FAQ = () => {
     return (
-        <div className="bg-white py-10 md:py-16 px-5 flex flex-col justify-center items-center">
-            <h2 className="font-bold text-2xl sm:text-3xl xl:text-4xl text-center text-black uppercase">
-                FREQUENTLY ASKED QUESTIONS
-            </h2>
-            <div className="grid grid-cols-2 gap-4 mt-3 md:mt-7 w-full sm:w-11/12 md:w-full xl:w-11/12 py-5">
-                {faqs.map((v, i) => (
-                    <div
-                        key={i}
-                        className="col-span-4 lg:col-span-1 flex flex-col justify-center items-center px-5"
-                    >
-                        <Faq
-                            styles={styles}
-                            config={config}
-                            data={v.questions}
-                        />
-                    </div>
-                ))}
+        <Element name="faq">
+            <div className="bg-white py-10 md:py-16 px-5 flex flex-col justify-center items-center">
+                <h2 className="font-bold text-2xl sm:text-3xl xl:text-4xl text-center text-black uppercase">
+                    FREQUENTLY ASKED QUESTIONS
+                </h2>
+                <div className="grid grid-cols-2 gap-4 mt-3 md:mt-7 w-full sm:w-11/12 md:w-full xl:w-11/12 py-5">
+                    {faqs.map((v, i) => (
+                        <div
+                            key={i}
+                            className="col-span-4 lg:col-span-1 flex flex-col justify-center items-center px-5"
+                        >
+                            <Faq
+                                styles={styles}
+                                config={config}
+                                data={v.questions}
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div>
+        </Element>
     );
 };
 
