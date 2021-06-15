@@ -30,8 +30,11 @@ const Banner = () => {
     return (
         <div
             style={{
-                paddingTop: 120,
                 backgroundImage: "url('/images/bg.webp')",
+                paddingTop:
+                    (typeof window !== "undefined" && window.innerWidth) > 786
+                        ? 50
+                        : 130,
             }}
             className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-evenly min-h-screen bg-no-repeat bg-cover bg-opacity-50 px-5 pb-5"
         >
@@ -48,7 +51,7 @@ const Banner = () => {
                     adhering to social distancing measure.
                 </p>
                 <p className="mt-5 text-lg xl:text-xl text-center md:text-left text-white">
-                    PLEASE CALL{" "}
+                    PLEASE CALL/TEXT{" "}
                     <a className="font-bold text-2xl" href="tel:289-812-3444">
                         289-812-3444
                     </a>
