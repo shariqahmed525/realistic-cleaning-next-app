@@ -63,9 +63,9 @@ const ContactUS = () => {
                                         id="name"
                                         type="text"
                                         name="name"
-                                        onBlur={handleBlur}
                                         value={values.name}
-                                        onChange={handleChange}
+                                        onBlur={handleBlur("name")}
+                                        onChange={handleChange("name")}
                                         placeholder="Name"
                                         className={`flex w-full mx-auto py-3 px-5 border ${
                                             errors.name && touched.name
@@ -84,9 +84,9 @@ const ContactUS = () => {
                                         id="email"
                                         type="email"
                                         name="email"
-                                        onBlur={handleBlur}
                                         value={values.email}
-                                        onChange={handleChange}
+                                        onBlur={handleBlur("email")}
+                                        onChange={handleChange("email")}
                                         placeholder="Email"
                                         className={`flex w-full mx-auto py-3 px-5 border ${
                                             errors.email && touched.email
@@ -105,9 +105,9 @@ const ContactUS = () => {
                                         id="subject"
                                         type="text"
                                         name="subject"
-                                        onBlur={handleBlur}
                                         value={values.subject}
-                                        onChange={handleChange}
+                                        onBlur={handleBlur("subject")}
+                                        onChange={handleChange("subject")}
                                         placeholder="Subject"
                                         className={`flex w-full mx-auto py-3 px-5 border ${
                                             errors.subject && touched.subject
@@ -127,9 +127,9 @@ const ContactUS = () => {
                                         id="message"
                                         type="text"
                                         name="message"
-                                        onBlur={handleBlur}
                                         value={values.message}
-                                        onChange={handleChange}
+                                        onBlur={handleBlur("message")}
+                                        onChange={handleChange("message")}
                                         placeholder="Message"
                                         className={`flex w-full mx-auto py-3 px-5 border ${
                                             errors.message && touched.message
