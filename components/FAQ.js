@@ -1,10 +1,11 @@
 import React from "react";
+import Image from "next/image";
 import Faq from "react-faq-component";
 import { Element } from "react-scroll";
 
 const config = {
     animate: true,
-    arrowIcon: <img src="/images/down-arrow.png" width="18" />,
+    arrowIcon: <Image src="/images/down-arrow.png" width="16" height="16" />,
 };
 
 const styles = {

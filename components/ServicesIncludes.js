@@ -36,7 +36,12 @@ const ServicesIncludes = () => {
                         key={i}
                         className="col-span-4 sm:col-span-2 lg:col-span-1 flex flex-col justify-center items-center p-5"
                     >
-                        <Image width={100} height={100} src={v.image} />
+                        <Image
+                            width={100}
+                            height={100}
+                            src={v.image}
+                            placeholder="blur"
+                        />
                         <p className="text-center mt-5 font-bold text-xl md:text-2xl">
                             {v.name}
                         </p>

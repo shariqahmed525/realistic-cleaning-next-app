@@ -107,6 +107,7 @@ const Testimonials = () => {
                                             width={100}
                                             height={100}
                                             src={v.image}
+                                            placeholder="blur"
                                             className="rounded-full"
                                         />
                                         <p className="font-semibold text-center text-2xl mt-7">

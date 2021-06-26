@@ -12,53 +12,21 @@ import {
     ServicesIncludes,
 } from "../components";
 const Home = () => {
-    `
-    
-    
-    `;
-
     return (
         <>
             <Head>
                 <title>Realistic Cleaning</title>
+                <meta charSet="UTF-8" />
+                <meta
+                    name="viewport"
+                    content="width=device-width, initial-scale=1, viewport-fit=cover"
+                />
+                <meta
+                    name="description"
+                    content="Realistic Cleaning is a professional carpet cleaning company specializing in residential and commercial carpet and furniture steam cleaning services. To book your appointment contact us at 289-812-3444"
+                />
+                <meta name="robots" content="noindex,nofollow" />
                 <link rel="icon" href="/favicon.ico" />
-                <script>
-                    {(() => {
-                        !(function (f, b, e, v, n, t, s) {
-                            if (f.fbq) return;
-                            n = f.fbq = function () {
-                                n.callMethod
-                                    ? n.callMethod.apply(n, arguments)
-                                    : n.queue.push(arguments);
-                            };
-                            if (!f._fbq) f._fbq = n;
-                            n.push = n;
-                            n.loaded = !0;
-                            n.version = "2.0";
-                            n.queue = [];
-                            t = b.createElement(e);
-                            t.async = !0;
-                            t.src = v;
-                            s = b.getElementsByTagName(e)[0];
-                            s.parentNode.insertBefore(t, s);
-                        })(
-                            window,
-                            document,
-                            "script",
-                            "https://connect.facebook.net/en_US/fbevents.js"
-                        );
-                        fbq("init", "339113737618805");
-                        fbq("track", "PageView");
-                    })()}
-                </script>
-                <noscript>
-                    <img
-                        width="1"
-                        height="1"
-                        style="display:none"
-                        src="https://www.facebook.com/tr?id=339113737618805&ev=PageView&noscript=1"
-                    />
-                </noscript>
             </Head>
             <Navbar />
             <Banner />

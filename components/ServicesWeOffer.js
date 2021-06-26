@@ -45,6 +45,7 @@ const ServicesWeOffer = () => {
                                 width={200}
                                 height={200}
                                 src={v.image}
+                                placeholder="blur"
                                 className="rounded-full"
                             />
                             <p className="text-center mt-5 font-bold text-xl md:text-2xl">

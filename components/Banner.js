@@ -50,9 +50,9 @@ const Banner = () => {
                         ? 50
                         : 130,
             }}
-            className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-evenly min-h-screen bg-no-repeat bg-cover bg-opacity-50 px-5 pb-5"
+            className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-evenly min-h-screen bg-no-repeat bg-cover bg-opacity-50 px-5 sm:px-10 pb-5"
         >
-            <div className="flex flex-0 md:flex-1 max-w-3xl items-center md:items-start flex-col mr-0 sm:mr-7">
+            <div className="flex flex-0 md:flex-1 max-w-3xl items-center md:items-start flex-col mr-0 md:mr-7">
                 <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center md:text-left text-white">
                     Realistic Cleaning
                 </h2>
@@ -76,7 +76,7 @@ const Banner = () => {
                     </p>
                 </div>
             </div>
-            <div className="flex flex-0 md:flex-1 w-full md:w-auto max-w-2xl flex-col bg-white border border-white p-5 md:p-7 xl:p-10 mt-3">
+            <div className="flex flex-0 md:flex-1 w-full md:w-auto max-w-2xl flex-col bg-white border border-white p-5 md:p-7 xl:p-10 mt-3 ml-0 md:ml-7">
                 <p className="font-bold text-xl md:text-2xl xl:text-4xl text-my-theme">
                     Get A Free Quote
                 </p>
@@ -91,9 +91,8 @@ const Banner = () => {
                     {({
                         values,
                         errors,
-                        touched,
-                        handleChange,
                         handleBlur,
+                        handleChange,
                         handleSubmit,
                         isSubmitting,
                     }) => (
@@ -190,6 +189,7 @@ const Banner = () => {
                                         <Image
                                             width="16"
                                             height="16"
+                                            placeholder="empty"
                                             src="/images/info.png"
                                             onClick={onTooltipToggle}
                                         />

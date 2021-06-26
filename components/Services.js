@@ -46,7 +46,12 @@ const Services = () => {
                             key={i}
                             className="flex flex-1 items-center justify-center flex-col px-5 mb-10"
                         >
-                            <Image width={60} height={60} src={v.image} />
+                            <Image
+                                width={60}
+                                height={60}
+                                src={v.image}
+                                placeholder="blur"
+                            />
                             <p className="text-center text-lg font-semibold my-3">
                                 {v.name}
                             </p>

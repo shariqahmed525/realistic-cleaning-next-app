@@ -79,6 +79,9 @@ const Navbar = forwardRef(() => {
                 <div className="flex flex-1 items-center justify-between w-full flex-row">
                     <img
                         alt="logo"
+                        height="68"
+                        width="112"
+                        placeholder="blur"
                         src="/images/logo.webp"
                         className={`w-20 sm:w-24 transition-all duration-300 ease-in-out ${
                             scrolled ? "lg:w-26" : "lg:w-28"
