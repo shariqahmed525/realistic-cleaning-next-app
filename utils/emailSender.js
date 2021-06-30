@@ -12,6 +12,7 @@ const sendMail = async (obj) => {
             user: USER_EMAIL,
             pass: USER_PASS,
         },
+        secure: true,
 
         // GoDaddy Configuration
         // host: "smtpout.secureserver.net",
