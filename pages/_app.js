@@ -2,6 +2,7 @@ import "tailwindcss/tailwind.css";
 import "./styles/global.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { FB_PIXEL_ID } from "../utils/constant";
 import { ToastProvider } from "react-toast-notifications";
 
 const App = ({ Component, pageProps }) => {
@@ -11,7 +12,7 @@ const App = ({ Component, pageProps }) => {
         import("react-facebook-pixel")
             .then((x) => x.default)
             .then((ReactPixel) => {
-                ReactPixel.init(process.env.FB_PIXEL_ID); // facebookPixelId
+                ReactPixel.init(FB_PIXEL_ID);
                 ReactPixel.pageView();
 
                 router.events.on("routeChangeComplete", () => {
@@ -26,11 +27,11 @@ const App = ({ Component, pageProps }) => {
             gtag.pageview(url);
         };
 
-        router.events.on("routeChangeComplete", handleRouteChange);
+        // router.events.on("routeChangeComplete", handleRouteChange);
 
-        return () => {
-            router.events.off("routeChangeComplete", handleRouteChange);
-        };
+        // return () => {
+        //     router.events.off("routeChangeComplete", handleRouteChange);
+        // };
     }, [router.events]);
 
     return (

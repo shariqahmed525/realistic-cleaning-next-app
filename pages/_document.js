@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-const GA_TRACKING_ID = process.env.GA_TRACKING_ID;
+import { GA_TRACKING_ID } from "../utils/constant";
 
 export default class MyDocument extends Document {
     render() {

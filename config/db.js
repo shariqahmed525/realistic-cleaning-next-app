@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
-const MONGODB_CONN_STR = process.env.MONGO_URI;
+const MONGODB_CONN_STR =
+    "mongodb+srv://fs-scheduling-system:realistic123@cluster0.hhz2v.mongodb.net/realisticcleaning?retryWrites=true&w=majority";
 
 const databaseMiddleware = async (req, res, next) => {
     try {

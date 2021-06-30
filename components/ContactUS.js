@@ -1,9 +1,10 @@
 import React from "react";
 import axios from "axios";
+import Loader from "./Loader";
 import { Formik } from "formik";
 import { Element } from "react-scroll";
-import { ContactSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
 import { useToasts } from "react-toast-notifications";
+import { ContactSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
 
 const INITIAL_VALUES = {
     name: "",
@@ -165,9 +166,9 @@ const ContactUS = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="bg-my-theme w-full py-2.5 text-white uppercase mx-auto flex text-lg justify-center"
+                                    className="bg-my-theme w-full h-12 text-white uppercase mx-auto text-lg justify-center"
                                 >
-                                    SUBMIT
+                                    {isSubmitting ? <Loader /> : "SUBMIT"}
                                 </button>
                             </form>
                         )}

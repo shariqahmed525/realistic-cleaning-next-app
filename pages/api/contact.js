@@ -1,5 +1,6 @@
 import Contact from "../../models/contact";
 import createHandler from "../../middleware";
+import emailSender from "../../utils/emailSender";
 
 const handler = createHandler();
 
@@ -14,6 +15,7 @@ handler.post(async (req, res) => {
     const newContact = new Contact(contactDetails);
     newContact.save();
     if (newContact) {
+        emailSender({ ...contactDetails, isEmail: true });
         res.json({
             success: true,
             message:
