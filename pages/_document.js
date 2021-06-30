@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { GA_TRACKING_ID } from "../lib/gtag";
+const GA_TRACKING_ID = process.env.GA_TRACKING_ID;
 
 export default class MyDocument extends Document {
     render() {

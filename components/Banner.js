@@ -1,24 +1,44 @@
 import React, { useEffect, useRef } from "react";
+import axios from "axios";
+import Loader from "./Loader";
 import Image from "next/image";
 import { Formik } from "formik";
-import { InfoSchema } from "../utils/constant";
+import { useToasts } from "react-toast-notifications";
+import { InfoSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
 
 const INITIAL_VALUES = {
     name: "",
     phone: "",
-    city: "",
     clean: "",
+    location: "",
 };
 
 const Banner = () => {
+    const { addToast } = useToasts();
     let tooltipMenuRef = useRef(null);
 
-    const onSubmit = async (formData) => {
+    const onSubmit = async (formData, actions) => {
         try {
-            const { data } = await axios.post(``, formData);
-            console.log(data);
+            const { data } = await axios.post("/api/query", formData);
+            if (data?.success && data?.message) {
+                addToast(data?.message, {
+                    appearance: "success",
+                    autoDismiss: true,
+                });
+            } else {
+                addToast(UNIVERSAL_ERROR_MSG, {
+                    appearance: "error",
+                    autoDismiss: true,
+                });
+            }
         } catch (error) {
+            addToast(UNIVERSAL_ERROR_MSG, {
+                appearance: "error",
+                autoDismiss: true,
+            });
             console.log(error);
+        } finally {
+            actions.resetForm();
         }
     };
 
@@ -83,15 +103,15 @@ const Banner = () => {
                 <Formik
                     initialValues={INITIAL_VALUES}
                     validationSchema={InfoSchema}
+                    validateOnBlur={false}
+                    validateOnChange={false}
                     onSubmit={(values, actions) => {
-                        onSubmit(values);
-                        actions.resetForm();
+                        onSubmit(values, actions);
                     }}
                 >
                     {({
                         values,
                         errors,
-                        handleBlur,
                         handleChange,
                         handleSubmit,
                         isSubmitting,
@@ -112,7 +132,6 @@ const Banner = () => {
                                     type="text"
                                     placeholder="John Doe"
                                     value={values.name}
-                                    onBlur={handleBlur("name")}
                                     onChange={handleChange("name")}
                                     className={`
                                         border ${
@@ -140,7 +159,6 @@ const Banner = () => {
                                     type="text"
                                     placeholder="647-789-3000"
                                     value={values.phone}
-                                    onBlur={handleBlur("phone")}
                                     onChange={handleChange("phone")}
                                     className={`
                                         border ${
@@ -158,27 +176,26 @@ const Banner = () => {
                             </div>
                             <div className="flex flex-1 flex-col mb-4">
                                 <label
-                                    htmlFor="city"
+                                    htmlFor="location"
                                     className="mb-2 text-gray-500 font-medium"
                                 >
                                     City/Town Name
                                 </label>
                                 <input
-                                    id="city"
+                                    id="location"
                                     type="text"
                                     placeholder="Toronto, ON"
-                                    value={values.city}
-                                    onBlur={handleBlur("city")}
-                                    onChange={handleChange("city")}
+                                    value={values.location}
+                                    onChange={handleChange("location")}
                                     className={`border ${
-                                        errors.city
+                                        errors.location
                                             ? "border-danger"
                                             : "border-gray-300"
                                     } px-3 sm:px-5 py-2 sm:py-3`}
                                 />
-                                {errors.city && (
+                                {errors.location && (
                                     <p className="flex w-full mx-auto mt-2 text-sm text-danger">
-                                        {errors.city}
+                                        {errors.location}
                                     </p>
                                 )}
                             </div>
@@ -216,7 +233,6 @@ const Banner = () => {
                                 <textarea
                                     rows={3}
                                     value={values.clean}
-                                    onBlur={handleBlur("clean")}
                                     onChange={handleChange("clean")}
                                     placeholder="What would you like to clean?"
                                     className={`border ${
@@ -235,9 +251,9 @@ const Banner = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="border-2 border-my-theme bg-my-theme cursor-pointer px-3 sm:px-5 py-2 sm:py-2.5 flex justify-center text-white items-center flex-1 text-base sm:text-lg xl:text-xl font-semibold"
+                                    className="border-2 border-my-theme bg-my-theme cursor-pointer px-3 sm:px-5 w-full h-12 flex justify-center text-white items-center text-base sm:text-lg xl:text-xl font-semibold"
                                 >
-                                    SUBMIT
+                                    {isSubmitting ? <Loader /> : "SUBMIT"}
                                 </button>
                             </div>
                         </form>

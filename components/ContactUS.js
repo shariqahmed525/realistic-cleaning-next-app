@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import { Formik } from "formik";
 import { Element } from "react-scroll";
-import { ContactSchema } from "../utils/constant";
+import { ContactSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
+import { useToasts } from "react-toast-notifications";
 
 const INITIAL_VALUES = {
     name: "",
@@ -12,12 +13,30 @@ const INITIAL_VALUES = {
 };
 
 const ContactUS = () => {
-    const onSubmit = async (formData) => {
+    const { addToast } = useToasts();
+
+    const onSubmit = async (formData, actions) => {
         try {
-            const { data } = await axios.post(``, formData);
-            console.log(data);
+            const { data } = await axios.post("/api/contact", formData);
+            if (data?.success && data?.message) {
+                addToast(data?.message, {
+                    appearance: "success",
+                    autoDismiss: true,
+                });
+            } else {
+                addToast(UNIVERSAL_ERROR_MSG, {
+                    appearance: "error",
+                    autoDismiss: true,
+                });
+            }
         } catch (error) {
+            addToast(UNIVERSAL_ERROR_MSG, {
+                appearance: "error",
+                autoDismiss: true,
+            });
             console.log(error);
+        } finally {
+            actions.resetForm();
         }
     };
 
@@ -38,19 +57,19 @@ const ContactUS = () => {
                         Let's Get In Touch
                     </p>
                     <Formik
+                        validateOnChange={false}
                         initialValues={INITIAL_VALUES}
                         validationSchema={ContactSchema}
                         onSubmit={(values, actions) => {
-                            onSubmit(values);
-                            actions.resetForm();
+                            onSubmit(values, actions);
                         }}
                     >
                         {({
                             values,
                             errors,
                             touched,
-                            handleChange,
                             handleBlur,
+                            handleChange,
                             handleSubmit,
                             isSubmitting,
                         }) => (

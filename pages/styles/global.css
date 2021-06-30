@@ -110,3 +110,29 @@
     background-color: #222;
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
 }
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    animation: lds-dual-ring 1.2s linear infinite;
+    border-color: #fff transparent #fff transparent;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

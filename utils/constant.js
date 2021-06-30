@@ -23,9 +23,11 @@ const InfoSchema = Yup.object().shape({
     clean: Yup.string().required(
         "Please enter what thing would you like to clean"
     ),
-    city: Yup.string().required(
+    location: Yup.string().required(
         "Please enter your city/town name or postal code"
     ),
 });
 
-export { InfoSchema, ContactSchema };
+const UNIVERSAL_ERROR_MSG = "Sorry, something went wrong! Please try again!";
+
+export { InfoSchema, ContactSchema, UNIVERSAL_ERROR_MSG };

@@ -2,6 +2,7 @@ import "tailwindcss/tailwind.css";
 import "./styles/global.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
+import { ToastProvider } from "react-toast-notifications";
 
 const App = ({ Component, pageProps }) => {
     const router = useRouter();
@@ -10,7 +11,7 @@ const App = ({ Component, pageProps }) => {
         import("react-facebook-pixel")
             .then((x) => x.default)
             .then((ReactPixel) => {
-                ReactPixel.init("339113737618805"); // facebookPixelId
+                ReactPixel.init(process.env.FB_PIXEL_ID); // facebookPixelId
                 ReactPixel.pageView();
 
                 router.events.on("routeChangeComplete", () => {
@@ -32,7 +33,11 @@ const App = ({ Component, pageProps }) => {
         };
     }, [router.events]);
 
-    return <Component {...pageProps} />;
+    return (
+        <ToastProvider placement="bottom-center">
+            <Component {...pageProps} />
+        </ToastProvider>
+    );
 };
 
 export default App;
