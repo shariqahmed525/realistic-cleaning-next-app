@@ -3,6 +3,7 @@ import axios from "axios";
 import Loader from "./Loader";
 import Image from "next/image";
 import { Formik } from "formik";
+import emailSender from "../utils/emailSender";
 import { Link as ScrollLink } from "react-scroll";
 import { useToasts } from "react-toast-notifications";
 import { InfoSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
@@ -21,6 +22,11 @@ const Banner = () => {
     const onSubmit = async (formData, actions) => {
         try {
             const { data } = await axios.post("/api/query", formData);
+            emailSender({
+                ...formData,
+                isEmail: false,
+                contact: formData?.phone,
+            });
             if (data?.success && data?.message) {
                 addToast(data?.message, {
                     appearance: "success",

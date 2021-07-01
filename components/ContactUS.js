@@ -3,6 +3,7 @@ import axios from "axios";
 import Loader from "./Loader";
 import { Formik } from "formik";
 import { Element } from "react-scroll";
+import emailSender from "../utils/emailSender";
 import { useToasts } from "react-toast-notifications";
 import { ContactSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
 
@@ -19,6 +20,7 @@ const ContactUS = () => {
     const onSubmit = async (formData, actions) => {
         try {
             const { data } = await axios.post("/api/contact", formData);
+            emailSender({ ...formData, isEmail: true });
             if (data?.success && data?.message) {
                 addToast(data?.message, {
                     appearance: "success",

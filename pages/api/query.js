@@ -1,18 +1,5 @@
-import axios from "axios";
 import Query from "../../models/query";
 import createHandler from "../../middleware";
-
-const emailSender = async (obj) => {
-    try {
-        const { data } = await axios.post(
-            "https://realistic-cleaning-send-mail.herokuapp.com/",
-            { ...obj }
-        );
-        console.log(data);
-    } catch (error) {
-        console.log("got error in email sender ===> ", error.message);
-    }
-};
 
 const handler = createHandler();
 
@@ -27,7 +14,6 @@ handler.post(async (req, res) => {
     const newQuery = new Query(queryDetails);
     newQuery.save();
     if (newQuery) {
-        emailSender({ ...queryDetails, isEmail: false });
         res.json({
             success: true,
             message:
