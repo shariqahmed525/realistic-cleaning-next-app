@@ -262,7 +262,7 @@ const Banner = () => {
                                     disabled={isSubmitting}
                                     className="border-2 border-my-theme bg-my-theme cursor-pointer px-3 sm:px-5 w-full h-12 flex justify-center text-white items-center text-base sm:text-lg xl:text-xl font-semibold"
                                 >
-                                    {isSubmitting ? <Loader /> : "DONE"}
+                                    {isSubmitting ? <Loader /> : "SEND"}
                                 </button>
                             </div>
                         </form>
