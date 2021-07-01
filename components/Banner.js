@@ -3,6 +3,7 @@ import axios from "axios";
 import Loader from "./Loader";
 import Image from "next/image";
 import { Formik } from "formik";
+import { Link as ScrollLink } from "react-scroll";
 import { useToasts } from "react-toast-notifications";
 import { InfoSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
 
@@ -90,11 +91,20 @@ const Banner = () => {
                         289-812-3444
                     </a>
                 </p>
-                <div className="py-3 w-40 bg-my-theme flex justify-center items-center cursor-pointer my-7">
-                    <p className="text-white uppercase text-center font-semibold">
-                        Contact US
-                    </p>
-                </div>
+                <ScrollLink
+                    spy={true}
+                    smooth={true}
+                    offset={-100}
+                    duration={500}
+                    to={"contact-us"}
+                    className="no-underline cursor-pointer"
+                >
+                    <div className="py-3 w-40 bg-my-theme flex justify-center items-center cursor-pointer my-7">
+                        <p className="text-white uppercase text-center font-semibold">
+                            Contact US
+                        </p>
+                    </div>
+                </ScrollLink>
             </div>
             <div className="flex flex-0 md:flex-1 w-full md:w-auto max-w-2xl flex-col bg-white border border-white p-5 md:p-7 xl:p-10 mt-3 ml-0 md:ml-7">
                 <p className="font-bold text-xl md:text-2xl xl:text-4xl text-my-theme">
@@ -249,11 +259,10 @@ const Banner = () => {
                             </div>
                             <div className="flex flex-1 flex-col mt-2">
                                 <button
-                                    type="submit"
                                     disabled={isSubmitting}
                                     className="border-2 border-my-theme bg-my-theme cursor-pointer px-3 sm:px-5 w-full h-12 flex justify-center text-white items-center text-base sm:text-lg xl:text-xl font-semibold"
                                 >
-                                    {isSubmitting ? <Loader /> : "SUBMIT"}
+                                    {isSubmitting ? <Loader /> : "DONE"}
                                 </button>
                             </div>
                         </form>

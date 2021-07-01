@@ -164,11 +164,10 @@ const ContactUS = () => {
                                     )}
                                 </div>
                                 <button
-                                    type="submit"
                                     disabled={isSubmitting}
                                     className="bg-my-theme w-full h-12 text-white uppercase mx-auto text-lg justify-center"
                                 >
-                                    {isSubmitting ? <Loader /> : "SUBMIT"}
+                                    {isSubmitting ? <Loader /> : "SEND"}
                                 </button>
                             </form>
                         )}

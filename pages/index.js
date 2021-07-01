@@ -16,6 +16,7 @@ const Home = () => {
         <>
             <Head>
                 <title>Realistic Cleaning</title>
+                <link rel="icon" href="/favicon.ico" />
                 <meta charSet="UTF-8" />
                 <meta
                     name="viewport"
@@ -26,7 +27,10 @@ const Home = () => {
                     content="Realistic Cleaning is a professional carpet cleaning company specializing in residential and commercial carpet and furniture steam cleaning services. To book your appointment contact us at 289-812-3444"
                 />
                 <meta name="robots" content="noindex,nofollow" />
-                <link rel="icon" href="/favicon.ico" />
+                <meta
+                    name="facebook-domain-verification"
+                    content="eklfikdmlg4k82kqih16ki3fpfpipe"
+                />
             </Head>
             <Navbar />
             <Banner />
