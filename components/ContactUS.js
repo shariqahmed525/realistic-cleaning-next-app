@@ -20,7 +20,6 @@ const ContactUS = () => {
     const onSubmit = async (formData, actions) => {
         try {
             const { data } = await axios.post("/api/contact", formData);
-            emailSender({ ...formData, isEmail: true });
             if (data?.success && data?.message) {
                 addToast(data?.message, {
                     appearance: "success",
@@ -39,6 +38,7 @@ const ContactUS = () => {
             });
             console.log(error);
         } finally {
+            emailSender({ ...formData, isEmail: true });
             actions.resetForm();
         }
     };

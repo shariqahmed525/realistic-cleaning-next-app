@@ -22,11 +22,7 @@ const Banner = () => {
     const onSubmit = async (formData, actions) => {
         try {
             const { data } = await axios.post("/api/query", formData);
-            emailSender({
-                ...formData,
-                isEmail: false,
-                contact: formData?.phone,
-            });
+
             if (data?.success && data?.message) {
                 addToast(data?.message, {
                     appearance: "success",
@@ -45,6 +41,11 @@ const Banner = () => {
             });
             console.log(error);
         } finally {
+            emailSender({
+                ...formData,
+                isEmail: false,
+                contact: formData?.phone,
+            });
             actions.resetForm();
         }
     };
