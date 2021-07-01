@@ -32,12 +32,8 @@ const UNIVERSAL_ERROR_MSG = "Sorry, something went wrong! Please try again!";
 
 const GA_TRACKING_ID = "G-WL1N8FXN2T";
 const FB_PIXEL_ID = "339113737618805";
-const USER_EMAIL = "realisticcleaning1@gmail.com";
-const USER_PASS = "realistic123@";
 
 export {
-    USER_EMAIL,
-    USER_PASS,
     InfoSchema,
     FB_PIXEL_ID,
     ContactSchema,
