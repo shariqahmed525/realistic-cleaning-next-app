@@ -17,7 +17,7 @@ const INITIAL_VALUES = {
 const ContactUS = () => {
     const { addToast } = useToasts();
 
-    const onSubmit = async (formData, actions) => {
+    const onSubmit = async (formData, actions, again = false) => {
         try {
             const { data } = await axios.post("/api/contact", formData);
             if (data?.success && data?.message) {
@@ -32,13 +32,9 @@ const ContactUS = () => {
                 });
             }
         } catch (error) {
-            addToast(UNIVERSAL_ERROR_MSG, {
-                appearance: "error",
-                autoDismiss: true,
-            });
-            console.log(error);
+            onSubmit(formData, actions, true);
         } finally {
-            if (formData && Object.keys(formData).length !== 0) {
+            if (!again && formData && Object.keys(formData).length !== 0) {
                 emailSender({ ...formData, isEmail: true });
             }
             actions.resetForm();

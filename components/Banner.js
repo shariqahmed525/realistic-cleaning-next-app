@@ -19,7 +19,7 @@ const Banner = () => {
     const { addToast } = useToasts();
     let tooltipMenuRef = useRef(null);
 
-    const onSubmit = async (formData, actions) => {
+    const onSubmit = async (formData, actions, again = false) => {
         try {
             const { data } = await axios.post("/api/query", formData);
 
@@ -35,13 +35,9 @@ const Banner = () => {
                 });
             }
         } catch (error) {
-            addToast(UNIVERSAL_ERROR_MSG, {
-                appearance: "error",
-                autoDismiss: true,
-            });
-            console.log(error);
+            onSubmit(formData, actions, true);
         } finally {
-            if (formData && Object.keys(formData).length !== 0) {
+            if (!again && formData && Object.keys(formData).length !== 0) {
                 emailSender({
                     ...formData,
                     isEmail: false,
