@@ -41,11 +41,13 @@ const Banner = () => {
             });
             console.log(error);
         } finally {
-            emailSender({
-                ...formData,
-                isEmail: false,
-                contact: formData?.phone,
-            });
+            if (formData && Object.keys(formData).length !== 0) {
+                emailSender({
+                    ...formData,
+                    isEmail: false,
+                    contact: formData?.phone,
+                });
+            }
             actions.resetForm();
         }
     };

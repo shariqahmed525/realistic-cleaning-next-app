@@ -38,7 +38,9 @@ const ContactUS = () => {
             });
             console.log(error);
         } finally {
-            emailSender({ ...formData, isEmail: true });
+            if (formData && Object.keys(formData).length !== 0) {
+                emailSender({ ...formData, isEmail: true });
+            }
             actions.resetForm();
         }
     };
