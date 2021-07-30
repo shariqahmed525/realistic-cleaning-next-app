@@ -4,6 +4,8 @@ const colors = {
     "my-gray": "#f1f3f7",
     secondary: "#ffed4a",
     "my-theme": "#305454",
+    "logo-theme-primary": "#17E7CD",
+    "logo-theme-secondary": "#1d1c1e",
     "my-theme-bg": "darkslategray",
 };
 

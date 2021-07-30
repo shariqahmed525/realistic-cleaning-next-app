@@ -17,50 +17,48 @@ const services = [
         text: "Our goodness, our reasonable prices! you will get high-quality cleaning at reasonable prices.",
         image: "/images/ex-3.webp",
     },
+    {
+        name: "EXPEDITIOUS CLEANING",
+        text: "We are equipped with state-of-the-art cleaning equipment and tools to complete each project in no time",
+        image: "/images/ex-4.webp",
+    },
 ];
 
 const Services = () => {
     return (
-        <>
-            <div className="grid grid-cols-12 gap-4 pt-16 pb-12 px-5">
-                <div className="col-start-1 col-span-12 lg:col-start-3 lg:col-span-8 flex flex-col items-center">
-                    <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl text-center text-black uppercase">
-                        Welcome To{" "}
-                        <span className="text-my-theme">
-                            Realistic Cleaning
-                        </span>
-                    </h2>
-                    <p className="mt-6 font-base text-lg md:text-xl text-center text-black max-w-2xl md:max-w-3xl">
-                        We provide professional and quality cleaning services.
-                        Our technicians are equipped with the most advance
-                        machinery to provide carpet and upholstery steam
-                        cleaning. We use eco-friendly, green-certified cleaning
-                        products.
-                    </p>
-                </div>
+        <div className="bg-white py-10 md:py-16 px-5 flex flex-col justify-center items-center">
+            <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl 2xl:text-5xl text-center text-black uppercase">
+                Welcome To{" "}
+                <span className="text-my-theme">Realistic Cleaning</span>
+            </h2>
+            <p className="mt-6 font-base text-lg md:text-xl text-center text-black max-w-2xl md:max-w-3xl">
+                We provide professional and quality cleaning services. Our
+                technicians are equipped with the most advance machinery to
+                provide carpet and upholstery steam cleaning. We use
+                eco-friendly, green-certified cleaning products.
+            </p>
+
+            <div className="grid grid-cols-4 gap-4 mt-3 md:mt-10 w-full sm:w-11/12 md:w-full xl:w-10/12">
+                {services.map((v, i) => (
+                    <div
+                        key={i}
+                        className="col-span-4 sm:col-span-2 lg:col-span-1 flex flex-col justify-start items-center p-5"
+                    >
+                        <Image
+                            width={60}
+                            height={60}
+                            src={v.image}
+                            placeholder="blur"
+                            blurDataURL={v.image}
+                        />
+                        <p className="text-center text-lg font-semibold mt-5 mb-3">
+                            {v.name}
+                        </p>
+                        <p className="text-center max-w-lg">{v.text}</p>
+                    </div>
+                ))}
             </div>
-            <div className="grid grid-cols-12 mb-10">
-                <div className="col-start-1 col-span-12 lg:col-start-2 lg:col-span-10 xl:col-start-3 xl:col-span-8 flex flex-col md:flex-row justify-center items-center md:items-start">
-                    {services.map((v, i) => (
-                        <div
-                            key={i}
-                            className="flex flex-1 items-center justify-center flex-col px-5 mb-10"
-                        >
-                            <Image
-                                width={60}
-                                height={60}
-                                src={v.image}
-                                placeholder="blur"
-                            />
-                            <p className="text-center text-lg font-semibold my-3">
-                                {v.name}
-                            </p>
-                            <p className="text-center max-w-lg">{v.text}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </>
+        </div>
     );
 };
 

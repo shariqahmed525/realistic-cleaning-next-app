@@ -4,23 +4,60 @@
     display: block;
     border-radius: 1px;
 }
-.show {
-    overflow: auto;
-    max-height: 500px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+
+.menu-button div.icon-bar {
+    width: 28px;
+    height: 2px;
+    display: block;
+    background-color: #222;
+    background: linear-gradient(90deg, #67ba6c, #02c0a8);
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: rotate(-45deg) translate(-4px, 3px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-5px, -4px);
+}
+
+.nav-menus {
+    height: auto;
     transition-property: all;
     transition-duration: 0.5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
-.show::-webkit-scrollbar {
-    width: 0px;
-    display: none;
-    background: transparent;
+
+@media (max-width: 1023px) {
+    .nav-menus {
+        height: 0;
+        transition-property: all;
+        transition-duration: 0.5s;
+    }
+
+    .show {
+        overflow: auto;
+        height: 310px;
+        max-height: 500px;
+        transition-property: all;
+        transition-duration: 0.5s;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    }
+
+    .show::-webkit-scrollbar {
+        display: none;
+        width: 0px; /* Remove scrollbar space */
+        background: transparent; /* Optional: just make scrollbar invisible */
+    }
 }
-.showMenu {
-    display: block;
-}
+
 .testimonial-box {
     border: medium none;
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);

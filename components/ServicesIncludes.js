@@ -41,6 +41,7 @@ const ServicesIncludes = () => {
                             height={100}
                             src={v.image}
                             placeholder="blur"
+                            blurDataURL={v.image}
                         />
                         <p className="text-center mt-5 font-bold text-xl md:text-2xl">
                             {v.name}

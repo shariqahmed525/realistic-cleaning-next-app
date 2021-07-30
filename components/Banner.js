@@ -71,18 +71,14 @@ const Banner = () => {
         <div
             style={{
                 backgroundImage: "url('/images/bg.webp')",
-                paddingTop:
-                    (typeof window !== "undefined" && window.innerWidth) > 786
-                        ? 50
-                        : 130,
             }}
-            className="flex flex-1 flex-col md:flex-row items-center justify-center md:justify-evenly min-h-screen bg-no-repeat bg-cover bg-opacity-50 px-5 sm:px-10 pb-5"
+            className="flex flex-1 flex-col lg:flex-row items-center justify-center lg:justify-evenly min-h-screen bg-no-repeat bg-cover bg-opacity-50 px-5 sm:px-10 pb-5 pt-36 lg:pt-20"
         >
-            <div className="flex flex-0 md:flex-1 max-w-3xl items-center md:items-start flex-col mr-0 md:mr-7">
-                <h2 className="font-bold text-3xl sm:text-4xl md:text-5xl xl:text-6xl text-center md:text-left text-white">
+            <div className="flex flex-0 md:flex-1 max-w-3xl items-center lg:items-start flex-col mr-0 md:mr-7">
+                <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-center lg:text-left text-white">
                     Realistic Cleaning
                 </h2>
-                <p className="mt-5 text-lg xl:text-xl text-center md:text-left text-white">
+                <p className="mt-5 text-lg xl:text-xl text-center lg:text-left text-white">
                     Realistic Cleaning is a professional carpet cleaning company
                     specializing in residential and commercial carpet and
                     furniture steam cleaning services. We are experts in carpet
@@ -90,12 +86,29 @@ const Banner = () => {
                     10 years of experience. We are open for business as usual
                     adhering to social distancing measure.
                 </p>
-                <p className="mt-5 text-lg xl:text-xl text-center md:text-left text-white">
-                    PLEASE CALL/TEXT{" "}
-                    <a className="font-bold text-2xl" href="tel:289-812-3444">
-                        289-812-3444
-                    </a>
+                <p className="font-bold mt-5 text-lg xl:text-xl text-center lg:text-left text-logo-theme-primary">
+                    PLEASE CONTACT US AT:
                 </p>
+                <a
+                    className="font-bold text-2xl text-center lg:text-left text-white mt-5"
+                    href="tel:289-812-3444"
+                >
+                    <img
+                        src="/images/cell.png"
+                        className="w-6 object-contain inline mr-2 sm:mr-4"
+                    />
+                    289-812-3444
+                </a>
+                <a
+                    className="font-bold text-2xl text-center lg:text-left text-white mt-3"
+                    href="mailto:realisticcleaning1@gmail.com"
+                >
+                    <img
+                        src="/images/email.png"
+                        className="w-7 object-contain inline mr-2 sm:mr-4"
+                    />
+                    realisticcleaning1@gmail.com
+                </a>
                 <ScrollLink
                     spy={true}
                     smooth={true}
@@ -111,7 +124,7 @@ const Banner = () => {
                     </div>
                 </ScrollLink>
             </div>
-            <div className="flex flex-0 md:flex-1 w-full md:w-auto max-w-2xl flex-col bg-white border border-white p-5 md:p-7 xl:p-10 mt-3 ml-0 md:ml-7">
+            <div className="flex flex-0 md:flex-1 w-full lg:w-auto max-w-2xl flex-col bg-white border border-white p-5 md:p-7 xl:p-10 mt-3 ml-0 md:ml-7">
                 <p className="font-bold text-xl md:text-2xl xl:text-4xl text-my-theme">
                     Get A Free Quote
                 </p>

@@ -6,16 +6,6 @@ import "react-multi-carousel/lib/styles.css";
 
 const reviews = [
     {
-        name: "Kristina Lewis",
-        text: "Fantastic service! I will definitely be a repeat customer! Highly recommended! The carpets where pretty soiled from a puppy! He cleaned them and deodorized them. Very reasonably priced.",
-        image: "/images/t-6.webp",
-    },
-    {
-        name: "Sandra Davidson",
-        text: "They were great with communication, on-time, polite, and made our old living room set look like brand new. I have been using their services for a long time and every time I noticed that they prefer the job not the money. I'll definitely hire them again",
-        image: "/images/t-7.webp",
-    },
-    {
         name: "Mariana Salas",
         text: "Highly recommended my carpet was incredibly dirty and they left it almost as new I am so happy with the service. They arrived on time and it was excelente service.",
         image: "/images/t-1.webp",
@@ -108,6 +98,7 @@ const Testimonials = () => {
                                             height={100}
                                             src={v.image}
                                             placeholder="blur"
+                                            blurDataURL={v.image}
                                             className="rounded-full"
                                         />
                                         <p className="font-semibold text-center text-2xl mt-7">

@@ -19,7 +19,11 @@ const InfoSchema = Yup.object().shape({
         .min(2, "Too Short!")
         .max(50, "Too Long!")
         .required("Please enter your name"),
-    phone: Yup.string().required("Please enter your contact no."),
+    phone: Yup.string()
+        .matches(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/, {
+            message: "Invalid contact no.!",
+        })
+        .required("Please enter your contact no."),
     clean: Yup.string().required(
         "Please enter what thing would you like to clean"
     ),

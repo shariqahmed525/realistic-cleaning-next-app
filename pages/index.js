@@ -11,6 +11,7 @@ import {
     ServicesWeOffer,
     ServicesIncludes,
 } from "../components";
+
 const Home = () => {
     return (
         <>
@@ -55,6 +56,14 @@ const Home = () => {
                 text="Realistic Cleaning is a trusted and recommended cleaning company. Book online today or call our team. We have professionally trained and certified technicians going the extra mile each day to keep our prices are reasonable and quality is high."
             />
             <FAQ />
+            <div className="mb-20">
+                <WhatsImportant
+                    bgImage="url('/images/bg-4.webp')"
+                    title="Our Partners / Our Clients"
+                    showPartners
+                    bgColor="bg-logo-theme-secondary"
+                />
+            </div>
             <ContactUS />
             <Footer />
         </>

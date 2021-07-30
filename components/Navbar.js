@@ -17,6 +17,11 @@ const menus = [
         offset: -100,
         id: "testimonials",
     },
+    // {
+    //     text: "Partners",
+    //     offset: -100,
+    //     id: "partners",
+    // },
     {
         text: "FAQ",
         offset: -70,
@@ -45,7 +50,7 @@ const ScrollableLink = ({ id, offset, text, onClick = () => {} }) => (
 
 const Navbar = forwardRef(() => {
     let navRef = useRef(null);
-    let toggleMenuRef = useRef(null);
+    let togglerRef = useRef(null);
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
@@ -57,82 +62,63 @@ const Navbar = forwardRef(() => {
         }
     }, []);
 
-    const onMenuToggle = () => {
-        navRef.current.classList.toggle("showMenu");
-        toggleMenuRef.current.classList.toggle("show");
+    const _toggler = () => {
+        navRef?.current?.classList?.toggle?.("show");
+        togglerRef?.current?.classList?.toggle?.("change");
     };
 
     return (
         <Element name="home">
             <navbar
                 id="fixed"
-                ref={toggleMenuRef}
                 style={{ zIndex: 1000 }}
                 className={`
-                 fixed top-0 w-full px-5 sm:px-10 lg:px-14 xl:px-20 flex flex-col md:flex-row justify-between items-center transition-all duration-300 ease-in-out bg-my-theme-bg shadow-lg ${
+                 fixed top-0 px-5 sm:px-10 lg:px-14 xl:px-20 grid grid-cols-12 flex-row w-full transition-all duration-300 ease-in-out bg-my-theme-bg shadow-lg overflow-hidden ${
                      scrolled
-                         ? "md:bg-my-theme-bg py-3.5"
-                         : "py-5 md:bg-transparent md:shadow-none"
+                         ? "lg:bg-my-theme-bg py-3.5"
+                         : "py-5 lg:bg-transparent md:shadow-none"
                  }
               `}
             >
-                <div className="flex flex-1 items-center justify-between w-full flex-row">
-                    <img
-                        alt="logo"
-                        height="68"
-                        width="112"
-                        placeholder="blur"
-                        src="/images/logo.webp"
-                        className={`w-20 sm:w-24 transition-all duration-300 ease-in-out ${
-                            scrolled ? "lg:w-26" : "lg:w-28"
+                <div className="col-start-1 col-end-13 xl:col-start-2 xl:col-end-12 2xl:col-start-3 2xl:col-end-11 flex flex-col lg:flex-row lg:items-center justify-between">
+                    <div
+                        className={`flex flex-1 flex-row justify-between items-center ${
+                            scrolled ? "h-16" : "h-18"
                         }`}
-                    />
-
-                    {/* Menus for web */}
-                    <nav className="hidden md:flex md:flex-1 justify-end items-center">
-                        <ul className="flex">
+                    >
+                        <img
+                            alt="logo"
+                            height="68"
+                            width="112"
+                            placeholder="blur"
+                            src="/images/logo.webp"
+                            className={`w-20 sm:w-24 transition-all duration-300 ease-in-out ${
+                                scrolled ? "lg:w-24 xl:w-26" : "lg:w-26 xl:w-28"
+                            }`}
+                        />
+                        <div
+                            ref={togglerRef}
+                            onClick={_toggler}
+                            className="block lg:hidden menu-button cursor-pointer p-3"
+                        >
+                            <div className="icon-bar bar1"></div>
+                            <div className="icon-bar bar2"></div>
+                            <div className="icon-bar bar3"></div>
+                        </div>
+                    </div>
+                    <nav ref={navRef} className="nav-menus">
+                        <ul className="py-2 xs:py-3 lg:py-0">
                             {menus.map((v, i) => (
                                 <li
                                     key={i}
-                                    className={`list-none px-4 py-2 transition-all duration-300 ease-in-out ${
-                                        scrolled ? "text-white" : "text-white"
-                                    } text-lg md:text-base ${
-                                        scrolled ? "lg:text-lg" : "lg:text-xl"
-                                    }`}
+                                    className="lg:inline-flex text-white px-2 xs:px-3 lg:px-7 py-2.5 mt-1"
                                 >
-                                    <ScrollableLink {...v} />
+                                    <ScrollableLink {...v} onClick={_toggler} />
                                 </li>
                             ))}
                         </ul>
                     </nav>
-                    <div
-                        onClick={onMenuToggle}
-                        className={`block md:hidden border border-white p-2.5 transition-all duration-300 ease-in-out`}
-                    >
-                        <span
-                            className={`transition-all duration-300 ease-in-out bg-white icon-bar mb-1`}
-                        ></span>
-                        <span
-                            className={`transition-all duration-300 ease-in-out bg-white icon-bar mb-1`}
-                        ></span>
-                        <span
-                            className={`transition-all duration-300 ease-in-out bg-white icon-bar`}
-                        ></span>
-                    </div>
                 </div>
-                {/* Menus for Mobile */}
-                <nav ref={navRef} className="hidden w-full">
-                    <ul className="w-full">
-                        {menus.map((v, i) => (
-                            <li
-                                key={i}
-                                className="py-2.5 mt-1 text-white text-base sm:text-lg px-2"
-                            >
-                                <ScrollableLink {...v} onClick={onMenuToggle} />
-                            </li>
-                        ))}
-                    </ul>
-                </nav>
             </navbar>
         </Element>
     );
