@@ -38,7 +38,7 @@ const Services = () => {
                 eco-friendly, green-certified cleaning products.
             </p>
 
-            <div className="grid grid-cols-4 gap-4 mt-3 md:mt-10 w-full sm:w-11/12 md:w-full xl:w-10/12">
+            <div className="grid grid-cols-4 gap-4 mt-10 w-full sm:w-11/12 md:w-full xl:w-10/12">
                 {services.map((v, i) => (
                     <div
                         key={i}

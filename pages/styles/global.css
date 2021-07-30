@@ -42,7 +42,7 @@
 
     .show {
         overflow: auto;
-        height: 310px;
+        height: 260px;
         max-height: 500px;
         transition-property: all;
         transition-duration: 0.5s;
