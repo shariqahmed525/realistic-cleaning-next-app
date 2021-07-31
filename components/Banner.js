@@ -95,17 +95,17 @@ const Banner = () => {
                 >
                     <img
                         src="/images/cell.png"
-                        className="w-4 sm:w-6 object-contain inline mr-2 sm:mr-4"
+                        className="w-6 object-contain inline mr-3 sm:mr-4"
                     />
                     289-812-3444
                 </a>
                 <a
-                    className="font-bold text-2xl text-center lg:text-left text-white mt-3"
+                    className="font-bold text-lg sm:text-2xl text-center lg:text-left text-white mt-3"
                     href="mailto:realisticcleaning1@gmail.com"
                 >
                     <img
                         src="/images/email.png"
-                        className="w-5 sm:w-7 object-contain inline mr-2 sm:mr-4"
+                        className="w-4 sm:w-7 object-contain inline mr-3 sm:mr-4"
                     />
                     realisticcleaning1@gmail.com
                 </a>
