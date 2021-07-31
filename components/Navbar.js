@@ -69,7 +69,7 @@ const Navbar = forwardRef(() => {
 
     return (
         <Element name="home">
-            <navbar
+            <section
                 id="fixed"
                 style={{ zIndex: 1000 }}
                 className={`
@@ -119,7 +119,7 @@ const Navbar = forwardRef(() => {
                         </ul>
                     </nav>
                 </div>
-            </navbar>
+            </section>
         </Element>
     );
 });

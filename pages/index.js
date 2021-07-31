@@ -1,16 +1,89 @@
 import Head from "next/head";
-import {
-    FAQ,
-    Banner,
-    Footer,
-    Navbar,
-    Services,
-    ContactUS,
-    Testimonials,
-    WhatsImportant,
-    ServicesWeOffer,
-    ServicesIncludes,
-} from "../components";
+import dynamic from "next/dynamic";
+
+const FAQDynamic = dynamic(() => import("../components/FAQ"), {
+    ssr: false,
+});
+
+const BannerDynamic = dynamic(() => import("../components/Banner"), {
+    ssr: false,
+    loading: () => (
+        <div className="flex flex-1 h-screen w-full justify-center items-center">
+            <div className="lds-ripple">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    ),
+});
+
+const FooterDynamic = dynamic(() => import("../components/Footer"), {
+    ssr: false,
+    loading: () => (
+        <p className="flex text-center justify-center align-center"></p>
+    ),
+});
+
+const NavbarDynamic = dynamic(() => import("../components/Navbar"), {
+    ssr: false,
+    loading: () => (
+        <p className="flex text-center justify-center align-center"></p>
+    ),
+});
+
+const ServicesDynamic = dynamic(() => import("../components/Services"), {
+    ssr: false,
+    loading: () => (
+        <p className="flex text-center justify-center align-center"></p>
+    ),
+});
+
+const ContactUSDynamic = dynamic(() => import("../components/ContactUS"), {
+    ssr: false,
+    loading: () => (
+        <p className="flex text-center justify-center align-center"></p>
+    ),
+});
+
+const TestimonialsDynamic = dynamic(
+    () => import("../components/Testimonials"),
+    {
+        ssr: false,
+        loading: () => (
+            <p className="flex text-center justify-center align-center"></p>
+        ),
+    }
+);
+
+const WhatsImportantDynamic = dynamic(
+    () => import("../components/WhatsImportant"),
+    {
+        ssr: false,
+        loading: () => (
+            <p className="flex text-center justify-center align-center"></p>
+        ),
+    }
+);
+
+const ServicesWeOfferDynamic = dynamic(
+    () => import("../components/ServicesWeOffer"),
+    {
+        ssr: false,
+        loading: () => (
+            <p className="flex text-center justify-center align-center"></p>
+        ),
+    }
+);
+
+const ServicesIncludesDynamic = dynamic(
+    () => import("../components/ServicesIncludes"),
+    {
+        ssr: false,
+        loading: () => (
+            <p className="flex text-center justify-center align-center"></p>
+        ),
+    }
+);
 
 const Home = () => {
     return (
@@ -33,12 +106,12 @@ const Home = () => {
                     content="eklfikdmlg4k82kqih16ki3fpfpipe"
                 />
             </Head>
-            <Navbar />
-            <Banner />
-            <Services />
-            <ServicesWeOffer />
-            <ServicesIncludes />
-            <WhatsImportant
+            <NavbarDynamic />
+            <BannerDynamic />
+            <ServicesDynamic />
+            <ServicesWeOfferDynamic />
+            <ServicesIncludesDynamic />
+            <WhatsImportantDynamic
                 bgImage="url('/images/bg-4.webp')"
                 title="WHAT IS THE IMPORTANCE OF CARPET CLEANING?"
                 text="Carpets are a valuable asset and a more valuable
@@ -49,23 +122,23 @@ const Home = () => {
                         keep bacteria, germs, and pollutants at an arm’s length
                         from your property."
             />
-            <Testimonials />
-            <WhatsImportant
+            <TestimonialsDynamic />
+            <WhatsImportantDynamic
                 bgImage="url('/images/bg-3.webp')"
                 title="ABOUT US"
                 text="Realistic Cleaning is a trusted and recommended cleaning company. Book online today or call our team. We have professionally trained and certified technicians going the extra mile each day to keep our prices are reasonable and quality is high."
             />
-            <FAQ />
+            <FAQDynamic />
             <div className="mb-20">
-                <WhatsImportant
+                <WhatsImportantDynamic
                     bgImage="url('/images/bg-4.webp')"
                     title="Our Partners / Our Clients"
                     showPartners
                     bgColor="bg-logo-theme-secondary"
                 />
             </div>
-            <ContactUS />
-            <Footer />
+            <ContactUSDynamic />
+            <FooterDynamic />
         </>
     );
 };
