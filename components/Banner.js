@@ -72,7 +72,7 @@ const Banner = () => {
             style={{
                 backgroundImage: "url('/images/bg.webp')",
             }}
-            className="flex flex-1 flex-col lg:flex-row items-center justify-center lg:justify-evenly min-h-screen bg-no-repeat bg-cover bg-opacity-50 px-5 sm:px-10 pb-5 pt-36 lg:pt-20"
+            className="flex bg-black flex-1 flex-col lg:flex-row items-center justify-center lg:justify-evenly min-h-screen bg-no-repeat bg-cover bg-opacity-50 px-5 sm:px-10 pb-5 pt-36 lg:pt-20"
         >
             <div className="flex flex-0 md:flex-1 max-w-3xl items-center lg:items-start flex-col mr-0 md:mr-7">
                 <h2 className="font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl text-center lg:text-left text-white">

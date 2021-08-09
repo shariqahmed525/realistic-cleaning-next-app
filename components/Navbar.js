@@ -93,7 +93,7 @@ const Navbar = forwardRef(() => {
                             placeholder="blur"
                             src="/images/logo.webp"
                             className={`w-20 sm:w-24 transition-all duration-300 ease-in-out ${
-                                scrolled ? "lg:w-24 xl:w-26" : "lg:w-26 xl:w-28"
+                                scrolled ? "lg:w-20 xl:w-24" : "lg:w-26 xl:w-28"
                             }`}
                         />
                         <div
