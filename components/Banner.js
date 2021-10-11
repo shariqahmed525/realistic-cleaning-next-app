@@ -278,28 +278,51 @@
 import React from "react";
 import content from "../utils/content";
 import Slider from "react-animated-slider";
+import { Link as ScrollLink } from "react-scroll";
 import "react-animated-slider/build/horizontal.css";
 import customCss from "../pages/styles/banner.module.css";
 
 const Banner = () => {
   return (
-    <Slider classNames={customCss}>
-      {content.map((item, index) => (
-        <div
-          key={index}
-          className={customCss.sliderContent}
-          style={{
-            background: `url('${item.image}') no-repeat center center`,
-          }}
-        >
-          <div className={customCss.inner}>
-            <h1>{item.title}</h1>
-            <p>{item.description}</p>
-            <button>{item.button}</button>
+    <>
+      <Slider autoplay={3000} classNames={customCss}>
+        {content.map((item, index) => (
+          <div
+            key={index}
+            className={customCss.sliderContent}
+            style={{
+              background: `url('${item.image}') no-repeat center center`,
+            }}
+          >
+            <div className={`${customCss.inner} py-0 px-10 2xl:px-16`}>
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl xl:text-6xl">
+                {item.title}
+              </h1>
+              <p className="text-sm lg:text-base">{item.description}</p>
+              <button className="px-12 py-3 bg-secondary-my-theme text-white rounded-full">
+                {item.button}
+              </button>
+            </div>
+          </div>
+        ))}
+      </Slider>
+      <ScrollLink
+        spy={true}
+        smooth={true}
+        offset={-100}
+        to={"welcome"}
+        duration={500}
+        className="no-underline cursor-pointer"
+      >
+        <div class="mouse_scroll cursor-pointer">
+          <div>
+            <span class="m_scroll_arrows unu"></span>
+            <span class="m_scroll_arrows doi"></span>
+            <span class="m_scroll_arrows trei"></span>
           </div>
         </div>
-      ))}
-    </Slider>
+      </ScrollLink>
+    </>
   );
 };
 
