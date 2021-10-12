@@ -46,12 +46,14 @@ const ScrollableLink = ({ id, offset, text, onClick = () => {} }) => (
 const Navbar = forwardRef(() => {
   let navRef = useRef(null);
   let togglerRef = useRef(null);
+  const [scroll, setScroll] = useState(0);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", () => {
         const checkWindowWidth = window.innerWidth > 786 ? 100 : 50;
+        setScroll(window.pageYOffset);
         setScrolled(window.pageYOffset > checkWindowWidth);
       });
     }
@@ -63,77 +65,98 @@ const Navbar = forwardRef(() => {
   };
 
   return (
-    <Element name="home">
-      <section
-        id="fixed"
-        style={{ zIndex: 1000 }}
-        className={`
+    <>
+      <ScrollLink
+        spy={true}
+        offset={0}
+        to={"home"}
+        smooth={true}
+        duration={500}
+        className="no-underline cursor-pointer"
+      >
+        <div
+          className={`w-14 h-14 bg-secondary-my-theme mx-0 bottom-5 right-5 sm:bottom-10 sm:right-10 rounded-full border border-secondary-my-theme fixed items-center justify-center z-40 cursor-pointer hover:bg-dark-my-theme transition-all duration-500 ease-in-out ${
+            scroll > 500 ? "flex" : "hidden"
+          }`}
+        >
+          <div class="arrow"></div>
+        </div>
+      </ScrollLink>
+
+      <Element name="home">
+        <section
+          id="fixed"
+          style={{ zIndex: 1000 }}
+          className={`
                  fixed top-0 xl:px-20 grid grid-cols-12 flex-row w-full transition-all duration-300 ease-in-out overflow-hidden bg-white ${
                    scrolled
                      ? "lg:bg-white py-5 custom-shadow"
                      : "py-5 lg:bg-transparent"
                  }
               `}
-      >
-        <div className="col-start-1 col-end-13 2xl:col-start-2 2xl:col-end-12 flex flex-col lg:flex-row lg:items-center justify-between">
-          <div
-            className={`flex flex-1 flex-row justify-between items-center px-5 sm:px-10 md:pl-10 ${
-              scrolled ? "h-18" : "h-18"
-            }`}
-          >
-            <img
-              alt="logo"
-              height="68"
-              width="112"
-              placeholder="blur"
-              src={"/images/logo.webp"}
-              className={`w-20 xl:w-24 transition-all duration-300 ease-in-out`}
-            />
+        >
+          <div className="col-start-1 col-end-13 2xl:col-start-2 2xl:col-end-12 flex flex-col lg:flex-row lg:items-center justify-between">
             <div
-              ref={togglerRef}
-              onClick={_toggler}
-              className="block lg:hidden menu-button cursor-pointer p-3"
+              className={`flex flex-1 flex-row justify-between items-center px-5 sm:px-10 md:pl-10 ${
+                scrolled ? "h-18" : "h-18"
+              }`}
             >
-              <div className="icon-bar bar1"></div>
-              <div className="icon-bar bar2"></div>
-              <div className="icon-bar bar3"></div>
-            </div>
-          </div>
-          <nav ref={navRef} className="nav-menus">
-            <ul className="py-2 xs:py-3 lg:py-0 lg:flex lg:items-center lg:pr-10 mt-4 lg:mt-0">
-              {menus.map((v, i) => (
-                <li
-                  key={i}
-                  className={`lg:inline-flex transition-all duration-300 ease-in-out ${
-                    scrolled
-                      ? "text-secondary-my-theme"
-                      : "text-secondary-my-theme lg:text-white"
-                  } px-2 xs:px-3 lg:px-7 py-4 lg:py-2.5 text-sm border-t lg:border-t-0 border-gray-200`}
-                >
-                  <ScrollableLink {...v} onClick={_toggler} />
-                </li>
-              ))}
+              <img
+                alt="logo"
+                height="68"
+                width="112"
+                placeholder="blur"
+                src={"/images/logo.webp"}
+                className={`w-20 xl:w-24 transition-all duration-300 ease-in-out`}
+              />
               <div
-                className={`hidden lg:inline-flex self-center custom-line ${
-                  !scrolled && "custom-line-scrolled-color"
-                }`}
-              ></div>
-              <div className="border-t lg:border-t-0 border-gray-200 py-4 pl-5 sm:pl-10 lg:pl-0">
-                <div
-                  className={`py-2.5 w-36 rounded-md shadow-md ${
-                    scrolled ? "bg-secondary-my-theme" : "bg-secondary-my-theme"
-                  } flex justify-center items-center cursor-pointer hover:bg-dark-my-theme transition-all duration-500 ease-in-out`}
-                >
-                  <p className="text-white text-sm uppercase text-center">
-                    GET QUOTE
-                  </p>
-                </div>
+                ref={togglerRef}
+                onClick={_toggler}
+                className="block lg:hidden menu-button cursor-pointer p-3"
+              >
+                <div className="icon-bar bar1"></div>
+                <div className="icon-bar bar2"></div>
+                <div className="icon-bar bar3"></div>
               </div>
-            </ul>
-          </nav>
-        </div>
-      </section>
-    </Element>
+            </div>
+            <nav ref={navRef} className="nav-menus">
+              <ul className="py-2 xs:py-3 lg:py-0 lg:flex lg:items-center lg:pr-10 mt-4 lg:mt-0">
+                {menus.map((v, i) => (
+                  <li
+                    key={i}
+                    className={`lg:inline-flex transition-all duration-300 ease-in-out ${
+                      scrolled
+                        ? "text-secondary-my-theme"
+                        : "text-secondary-my-theme lg:text-white"
+                    } px-2 xs:px-3 lg:px-7 py-4 lg:py-2.5 text-sm border-t lg:border-t-0 border-gray-200`}
+                  >
+                    <ScrollableLink {...v} onClick={_toggler} />
+                  </li>
+                ))}
+                <div
+                  className={`hidden lg:inline-flex self-center custom-line ${
+                    !scrolled && "custom-line-scrolled-color"
+                  }`}
+                ></div>
+                <div className="border-t lg:border-t-0 border-gray-200 py-4 pl-5 sm:pl-10 lg:pl-0">
+                  <div
+                    className={`py-2.5 w-36 rounded-md shadow-md ${
+                      scrolled
+                        ? "bg-secondary-my-theme"
+                        : "bg-secondary-my-theme"
+                    } flex justify-center items-center cursor-pointer hover:bg-dark-my-theme transition-all duration-500 ease-in-out`}
+                  >
+                    <p className="text-white text-sm uppercase text-center">
+                      GET QUOTE
+                    </p>
+                  </div>
+                </div>
+              </ul>
+            </nav>
+          </div>
+        </section>
+      </Element>
+    </>
   );
 });
 

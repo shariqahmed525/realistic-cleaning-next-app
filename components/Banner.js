@@ -299,7 +299,7 @@ const Banner = () => {
                 {item.title}
               </h1>
               <p className="text-sm lg:text-base">{item.description}</p>
-              <button className="px-12 py-3 bg-secondary-my-theme text-white rounded-full">
+              <button className="px-12 py-3 bg-secondary-my-theme text-white rounded-full hover:bg-dark-my-theme">
                 {item.button}
               </button>
             </div>

@@ -2,7 +2,7 @@ const colors = {
   primary: "#3490dc",
   danger: "#e3342f",
   dark: "#2e3d49",
-  "my-gray": "#f1f3f7",
+  "my-gray": "#f4f9fe",
   secondary: "#ffed4a",
   "my-theme": "#01b3e4",
   "dark-my-theme": "#016682",

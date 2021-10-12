@@ -111,7 +111,7 @@ const Home = () => {
       <ServicesDynamic />
       <ServicesWeOfferDynamic />
       <ServicesIncludesDynamic />
-      <WhatsImportantDynamic
+      {/* <WhatsImportantDynamic
         bgImage="url('/images/bg-4.webp')"
         title="WHAT IS THE IMPORTANCE OF CARPET CLEANING?"
         text="Carpets are a valuable asset and a more valuable
@@ -121,22 +121,37 @@ const Home = () => {
                         found that professional carpet cleaning is required to
                         keep bacteria, germs, and pollutants at an arm’s length
                         from your property."
-      />
+      /> */}
       <TestimonialsDynamic />
       <WhatsImportantDynamic
+        bgImage="url('/images/what-important-1.webp')"
+        title="WHAT IS THE IMPORTANCE OF AIR DUCT CLEANING?"
+        text="Air ducts and Dryer Vents require cleaning. The Environment Protection Agency (EPA) suggests the cleaning of dryer vents and ductwork on a mandatory basis which means they suggest inspecting your HVAC system and air vents to check if there are no pollutants found and they are well maintained. Pollutants may include dirt, allergens, dust, chemicals, pollens, and other things which might be stuck in the air ducts and are polluting your house, making the air contaminated for you and your family. A properly cleaned ducts and dryer vent can work more efficiently and it also lessens the utility bill."
+      />
+      {/* <WhatsImportantDynamic
+        // bgImage="url('/images/bg-3.webp')"
+        // title="ABOUT US"
+        // text="Realistic Cleaning is a trusted and recommended cleaning company. Book online today or call our team. We have professionally trained and certified technicians going the extra mile each day to keep our prices are reasonable and quality is high."
         bgImage="url('/images/bg-3.webp')"
         title="ABOUT US"
-        text="Realistic Cleaning is a trusted and recommended cleaning company. Book online today or call our team. We have professionally trained and certified technicians going the extra mile each day to keep our prices are reasonable and quality is high."
-      />
+        text="We are licensed, certified, and insured. Our main priority is your
+          health and satisfaction. Apart from our techniques and standards, we
+          have a team of well-trained technicians who are familiar with
+          different solutions which may cause any problem while trying to
+          enhance the overall quality of indoor air. Our team works according to
+          modern industrial standards being as safe and efficient as possible
+          and we also use the best available equipment for the best possible
+          outcome."
+      /> */}
       <FAQDynamic />
-      <div className="mb-20">
+      {/* <div className="mb-20">
         <WhatsImportantDynamic
           bgImage="url('/images/bg-4.webp')"
           title="Our Partners / Our Clients"
           showPartners
           bgColor="bg-secondary-my-theme"
         />
-      </div>
+      </div> */}
       <ContactUSDynamic />
       <FooterDynamic />
     </>

@@ -33,7 +33,7 @@ const WhatsImportant = ({ bgImage, title, text, showPartners, bgColor }) => {
             {title}
           </h2>
           {text && (
-            <p className="text-base sm:text-lg xl:text-xl text-center text-white mt-5">
+            <p className="text-base sm:text-lg text-center text-white mt-5">
               {text}
             </p>
           )}
