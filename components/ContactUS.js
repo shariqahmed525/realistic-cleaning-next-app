@@ -51,10 +51,10 @@ const ContactUS = () => {
         }}
       >
         <div className="bg-black bg-opacity-30 py-10 md:py-16 px-5 flex flex-col justify-center items-center">
-          <h2 className="font-bold text-2xl sm:text-3xl xl:text-4xl text-center text-white uppercase">
+          <h2 className="sec-title font-sans font-semibold text-2xl xs:text-3xl text-center text-white uppercase relative">
             CONTACT US
           </h2>
-          <p className="mt-1 font-normal text-base xl:text-lg text-center text-gray-200">
+          <p className="mt-5 font-normal text-base xl:text-lg text-center text-gray-200">
             Let's Get In Touch
           </p>
           <Formik
@@ -76,7 +76,7 @@ const ContactUS = () => {
             }) => (
               <form
                 onSubmit={handleSubmit}
-                className="bg-white px-7 flex flex-1 flex-col justify-center items-center mt-3 md:mt-7 w-full sm:w-11/12 md:w-full xl:w-11/12 max-w-full md:max-w-xl py-7 shadow-2xl"
+                className="bg-white px-7 flex flex-1 flex-col justify-center items-center mt-10 md:mt-7 w-full sm:w-11/12 md:w-full xl:w-11/12 max-w-full md:max-w-xl py-7 shadow-2xl"
               >
                 <div className="mb-5 w-full flex flex-col justify-center">
                   <input

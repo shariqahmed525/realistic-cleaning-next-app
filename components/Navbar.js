@@ -107,7 +107,7 @@ const Navbar = forwardRef(() => {
                 width="112"
                 placeholder="blur"
                 src={"/images/logo.webp"}
-                className={`w-20 xl:w-24 transition-all duration-300 ease-in-out`}
+                className={`w-16 xs:w-20 xl:w-24 transition-all duration-300 ease-in-out`}
               />
               <div
                 ref={togglerRef}
@@ -128,7 +128,7 @@ const Navbar = forwardRef(() => {
                       scrolled
                         ? "text-secondary-my-theme"
                         : "text-secondary-my-theme lg:text-white"
-                    } px-2 xs:px-3 lg:px-7 py-4 lg:py-2.5 text-sm border-t lg:border-t-0 border-gray-200`}
+                    } px-2 xs:px-3 lg:px-7 py-4 lg:py-2.5 text-xs xs:text-sm border-t lg:border-t-0 border-gray-200`}
                   >
                     <ScrollableLink {...v} onClick={_toggler} />
                   </li>
@@ -140,13 +140,13 @@ const Navbar = forwardRef(() => {
                 ></div>
                 <div className="border-t lg:border-t-0 border-gray-200 py-4 pl-5 sm:pl-10 lg:pl-0">
                   <div
-                    className={`py-2.5 w-36 rounded-md shadow-md ${
+                    className={`py-2.5 w-32 xs:w-36 rounded-md shadow-md ${
                       scrolled
                         ? "bg-secondary-my-theme"
                         : "bg-secondary-my-theme"
                     } flex justify-center items-center cursor-pointer hover:bg-dark-my-theme transition-all duration-500 ease-in-out`}
                   >
-                    <p className="text-white text-sm uppercase text-center">
+                    <p className="text-white text-xs xs:text-sm uppercase text-center">
                       GET QUOTE
                     </p>
                   </div>

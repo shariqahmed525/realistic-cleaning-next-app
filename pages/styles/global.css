@@ -1,3 +1,36 @@
+body {
+  background-color: #fff;
+  font-family: "Open Sans", sans-serif;
+}
+
+.sec-title:after {
+  content: "";
+  width: 120px;
+  display: block;
+  margin: 20px auto 0px auto;
+  border-bottom: 1px solid #01b3e4;
+}
+
+@media only screen and (max-width: 767px) {
+  .sec-title:after {
+    width: 90px;
+  }
+}
+
+.item-title:after {
+  content: "";
+  width: 100px;
+  display: block;
+  margin: 15px auto 0px auto;
+  border-bottom: 1px solid #017a9b;
+}
+
+@media only screen and (max-width: 767px) {
+  .item-title:after {
+    width: 70px;
+  }
+}
+
 .custom-shadow {
   -webkit-box-shadow: 0 1px 20px 0 rgb(46 61 73 / 20%);
   box-shadow: 0 1px 20px 0 rgb(46 61 73 / 20%);

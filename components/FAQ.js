@@ -75,7 +75,7 @@ const FAQ = () => {
   return (
     <Element name="faq">
       <div className="bg-white py-10 md:py-16 px-5 flex flex-col justify-center items-center">
-        <h2 className="font-bold text-2xl sm:text-3xl xl:text-4xl text-center text-black uppercase">
+        <h2 className="sec-title font-sans font-semibold text-2xl xs:text-3xl text-center text-black uppercase relative">
           FREQUENTLY ASKED QUESTIONS
         </h2>
         <div className="grid grid-cols-2 gap-4 mt-3 md:mt-7 w-full sm:w-11/12 md:w-full xl:w-11/12 py-5">

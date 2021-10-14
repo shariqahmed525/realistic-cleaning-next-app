@@ -298,8 +298,10 @@ const Banner = () => {
               <h1 className="text-3xl xs:text-4xl sm:text-5xl xl:text-6xl">
                 {item.title}
               </h1>
-              <p className="text-sm lg:text-base">{item.description}</p>
-              <button className="px-12 py-3 bg-secondary-my-theme text-white rounded-full hover:bg-dark-my-theme">
+              <p className="text-sm xs:text-base lg:text-base">
+                {item.description}
+              </p>
+              <button className="px-12 py-3 text-sm xs:text-base bg-secondary-my-theme text-white rounded-full hover:bg-dark-my-theme">
                 {item.button}
               </button>
             </div>
