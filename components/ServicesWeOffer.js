@@ -75,7 +75,9 @@ const ServicesWeOffer = () => {
               <p className="item-title font-sans font-semibold mt-5 text-center text-black uppercase relative text-base xs:text-lg sm:text-xl">
                 {v.name}
               </p>
-              <p className="text-center mt-5 text-sm xs:text-base">{v.text}</p>
+              <p className="text-center font-sans mt-5 text-sm xs:text-base">
+                {v.text}
+              </p>
             </div>
           ))}
         </div>

@@ -295,10 +295,10 @@ const Banner = () => {
             }}
           >
             <div className={`${customCss.inner} py-0 px-10 2xl:px-16`}>
-              <h1 className="text-3xl xs:text-4xl sm:text-5xl xl:text-6xl">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl xl:text-6xl font-sans">
                 {item.title}
               </h1>
-              <p className="text-sm xs:text-base lg:text-base">
+              <p className="text-sm xs:text-base lg:text-base font-sans">
                 {item.description}
               </p>
               <ScrollLink
@@ -309,7 +309,7 @@ const Banner = () => {
                 to={"get-quote"}
                 className="no-underline cursor-pointer"
               >
-                <button className="px-12 py-3 text-sm xs:text-base bg-secondary-my-theme text-white rounded-full hover:bg-dark-my-theme">
+                <button className="px-12 py-3 font-sans text-sm xs:text-base bg-secondary-my-theme text-white rounded-full hover:bg-dark-my-theme">
                   {item.button}
                 </button>
               </ScrollLink>

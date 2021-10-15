@@ -74,10 +74,10 @@ const GetQuote = () => {
         <div className="bg-dark bg-opacity-80 w-full flex flex-col justify-center items-center">
           <div className="grid grid-cols-2 gap-0 lg:gap-4 w-full xl:w-10/12">
             <div className="col-span-2 lg:col-span-1 pt-20 px-10 flex flex-col justify-center">
-              <p className="font-bold text-base sl:text-2xl md:text-3xl lg:text-4xl text-center lg:text-left text-white uppercase">
+              <p className="font-bold font-sans text-base sl:text-2xl md:text-3xl lg:text-4xl text-center lg:text-left text-white uppercase">
                 You’ll be on the schedule shortly.
               </p>
-              <p className="mt-3 font-base text-sm sl:text-base sm:text-xl text-center lg:text-left text-white">
+              <p className="mt-3 font-base font-sans text-sm sl:text-base sm:text-xl text-center lg:text-left text-white">
                 Please fill out all fields to book your appointment.
               </p>
             </div>
@@ -109,7 +109,7 @@ const GetQuote = () => {
                       <div className="w-full flex flex-1 flex-col mb-6">
                         <label
                           htmlFor="name"
-                          className="mb-2 text-white font-medium"
+                          className="mb-2 font-sans text-white font-medium"
                         >
                           Name{" "}
                           <span className="text-my-theme font-bold text-xl">
@@ -125,11 +125,11 @@ const GetQuote = () => {
                           className={`
                             border ${
                               errors.name ? "border-" : "border-gray-300"
-                            } px-3 sm:px-5 py-2 sm:py-3
+                            } px-3 sm:px-5 py-2 sm:py-3 font-sans
                         `}
                         />
                         {errors.name && (
-                          <p className="flex w-full mx-auto mt-2 text-sm text-red-400">
+                          <p className="flex font-sans w-full mx-auto mt-2 text-sm text-red-400">
                             {errors.name}
                           </p>
                         )}
@@ -137,7 +137,7 @@ const GetQuote = () => {
                       <div className="w-full flex flex-1 flex-col mb-6">
                         <label
                           htmlFor="contact"
-                          className="mb-2 text-white font-medium"
+                          className="mb-2 font-sans text-white font-medium"
                         >
                           Contact No.{" "}
                           <span className="text-my-theme font-bold text-xl">
@@ -153,11 +153,11 @@ const GetQuote = () => {
                           className={`
                             border ${
                               errors.phone ? "border-danger" : "border-gray-300"
-                            } px-3 sm:px-5 py-2 sm:py-3
+                            } px-3 sm:px-5 py-2 sm:py-3 font-sans 
                         `}
                         />
                         {errors.phone && (
-                          <p className="flex w-full mx-auto mt-2 text-sm text-red-400">
+                          <p className="flex w-full font-sans mx-auto mt-2 text-sm text-red-400">
                             {errors.phone}
                           </p>
                         )}
@@ -165,7 +165,7 @@ const GetQuote = () => {
                       <div className="w-full flex flex-1 flex-col mb-6">
                         <label
                           htmlFor="location"
-                          className="mb-2 text-white font-medium"
+                          className="mb-2 font-sans text-white font-medium"
                         >
                           Zip code{" "}
                           <span className="text-my-theme font-bold text-xl">
@@ -182,16 +182,16 @@ const GetQuote = () => {
                             errors.location
                               ? "border-danger"
                               : "border-gray-300"
-                          } px-3 sm:px-5 py-2 sm:py-3`}
+                          } px-3 sm:px-5 py-2 sm:py-3 font-sans`}
                         />
                         {errors.location && (
-                          <p className="flex w-full mx-auto mt-2 text-sm text-red-400">
+                          <p className="flex w-full font-sans mx-auto mt-2 text-sm text-red-400">
                             {errors.location}
                           </p>
                         )}
                       </div>
                       <div className="w-full flex flex-1 flex-col mb-6">
-                        <label className="mb-2 text-white font-medium z-50">
+                        <label className="mb-2 font-sans text-white font-medium z-50">
                           What To Clean?{" "}
                           <span className="text-my-theme font-bold text-xl">
                             *
@@ -216,7 +216,7 @@ const GetQuote = () => {
                               couches/sofas) &amp; size of mattress (king,
                               queen, single or double).
                             </div> */}
-                              <div className="text-content">
+                              <div className="text-content font-sans">
                                 To generate an estimate we need to know no. of
                                 furnaces, house size (in terms of square feet)
                                 dryer vent if needed? Thanks.
@@ -233,10 +233,10 @@ const GetQuote = () => {
                           placeholder="I would like to clean...."
                           className={`border ${
                             errors.clean ? "border-danger" : "border-gray-300"
-                          } px-3 sm:px-5 py-2 sm:py-3`}
+                          } px-3 sm:px-5 py-2 sm:py-3 font-sans`}
                         />
                         {errors.clean && (
-                          <p className="flex w-full mx-auto mt-2 text-sm text-red-400">
+                          <p className="flex w-full font-sans mx-auto mt-2 text-sm text-red-400">
                             {errors.clean}
                           </p>
                         )}
@@ -244,7 +244,7 @@ const GetQuote = () => {
 
                       <button
                         disabled={isSubmitting}
-                        className="bg-my-theme mt-2 w-full h-12 text-white uppercase mx-auto text-base justify-center"
+                        className="bg-my-theme mt-2 w-full h-12 font-sans text-white uppercase mx-auto text-base justify-center"
                       >
                         {isSubmitting ? <Loader /> : "SEND"}
                       </button>

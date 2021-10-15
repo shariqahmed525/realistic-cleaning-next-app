@@ -35,7 +35,7 @@ const Services = () => {
           What Is{" "}
           <span className="text-secondary-my-theme">Realistic Cleaning?</span>
         </h2>
-        <p className="mt-8 font-base text-sm sm:text-base md:text-lg text-center text-black max-w-3xl md:max-w-6xl">
+        <p className="mt-8 font-sans font-base text-sm sm:text-base md:text-lg text-center text-black max-w-3xl md:max-w-6xl">
           {/* We provide professional and quality cleaning services. Our technicians
           are equipped with the most advance machinery to provide carpet and
           upholstery steam cleaning. We use eco-friendly, green-certified
@@ -55,10 +55,10 @@ const Services = () => {
         </div>
         <div className="grid grid-cols-2 gap-0 sm:gap-4 mt-10 max-w-3xl md:max-w-7xl">
           <div className="col-span-2 sm:col-span-1 p-5 px-0">
-            <p className="font-bold text-base sm:text-xl text-left text-black uppercase">
+            <p className="font-bold font-sans text-base sm:text-xl text-left text-black uppercase">
               What we are best known for?
             </p>
-            <p className="mt-3 font-base text-xs xs:text-sm sm:text-base text-left text-black">
+            <p className="mt-3 font-sans font-base text-xs xs:text-sm sm:text-base text-left text-black">
               We are licensed, certified, and insured. Our main priority is your
               health and satisfaction. Apart from our techniques and standards,
               we have a team of well-trained technicians who are familiar with
@@ -70,10 +70,10 @@ const Services = () => {
             </p>
           </div>
           <div className="col-span-2 sm:col-span-1 py-5 pl-0 pr-0 sm:pl-5 sm:border-l border-gray-200">
-            <p className="font-bold text-base sm:text-xl text-left text-black uppercase">
+            <p className="font-bold font-sans text-base sm:text-xl text-left text-black uppercase">
               Why should we be your first consideration?
             </p>
-            <p className="mt-3 font-base text-xs xs:text-sm sm:text-base text-left text-black">
+            <p className="mt-3 font-sans font-base text-xs xs:text-sm sm:text-base text-left text-black">
               First of all, dryer vents, air ducts and other ductwork are
               delicate airways and require someone professional for better
               cleaning and also to prevent damage, the worst case scenario would
@@ -102,7 +102,7 @@ const Services = () => {
             <div
               className={`py-2.5 w-40 xs:w-44 sm:w-52 mt-5 sm:mt-10 rounded-md flex justify-center items-center cursor-pointer bg-secondary-my-theme border shadow-md text-white hover:bg-dark-my-theme transition-all duration-500 ease-in-out`}
             >
-              <p className="text-xs xs:text-base uppercase text-center">
+              <p className="text-xs xs:text-base uppercase font-sans text-center">
                 GET SERVICE
               </p>
             </div>
