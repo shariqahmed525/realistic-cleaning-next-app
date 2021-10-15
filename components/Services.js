@@ -79,14 +79,14 @@ const Services = () => {
               cleaning and also to prevent damage, the worst case scenario would
               be, if the technician doesn't handle the work properly and
               mistakenly releases all the pollutants intro the house, that would
-              be extremely dangerous.
-              <br />
+              be extremely dangerous. Indoor Air Quality is a matter that
+              shouldn't be taken lightly.
+              {/* <br />
               <br />
               Our team has years of working experience, from small houses to big
               retails stores, we have done it all. We know how to deal with all
               types of ductwork with the proper tools required and also in the
-              correct way. Indoor Air Quality is a matter that shouldn't be
-              taken lightly.
+              correct way.  */}
             </p>
           </div>
         </div>

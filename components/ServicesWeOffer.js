@@ -39,7 +39,7 @@ const servicesWeOffer = [
   {
     name: "Sanitization",
     image: "/images/serv-3.webp",
-    text: "Sanitization prevent the spread of germs and spores through the air. Mold is the primary concern with ducts, as it can easily build up in these isolated areas and can be tough to remove. After the system has been cleaned an EPA registered air duct sanitizer will be applied.",
+    text: "Sanitization prevent the spread of germs and spores through the air. Mold is the primary concern with ducts, as it can easily build up in these isolated areas and can be tough to remove.",
   },
   {
     name: "Furnace Cleaning",
