@@ -24,26 +24,27 @@ import { Element } from "react-scroll";
 //     text: "Our mattress cleaning process involves a high-frequency vibrating system that loosens dirt and dust attached to your mattress.",
 //   },
 // ];
+
 const servicesWeOffer = [
   {
     name: "Duct Cleaning",
-    image: "/images/ser-1.webp",
+    image: "/images/serv-1.webp",
     text: "The air ducts in your home provide a very important function. They circulate the air from your heating and cooling system into and out of each room, which allows for consistent interior comfort regardless of the season.",
   },
   {
     name: "Dryer Vent Cleaning",
-    image: "/images/ser-2.webp",
+    image: "/images/serv-2.webp",
     text: "A clogged dryer vent forces the dryer to work hard and also shortens its life span, which can cost you a lot of money. A properly cleaned dryer vent can work more efficiently and it also lessens the utility bill.",
   },
   {
     name: "Sanitization",
-    image: "/images/ser-3.webp",
+    image: "/images/serv-3.webp",
     text: "Sanitization prevent the spread of germs and spores through the air. Mold is the primary concern with ducts, as it can easily build up in these isolated areas and can be tough to remove. After the system has been cleaned an EPA registered air duct sanitizer will be applied.",
   },
   {
     name: "Furnace Cleaning",
-    image: "/images/ser-4.webp",
-    text: "We recommends having your furnace cleaned within a three year period or should be serviced at least once a year, preferably, though, in both the spring and the fall.",
+    image: "/images/serv-4.webp",
+    text: "We recommend having your furnace cleaned within a three year period or should be serviced at least once a year, preferably, though, in both the spring and the fall.",
   },
 ];
 
@@ -55,7 +56,7 @@ const ServicesWeOffer = () => {
           Services We Offer
         </h2>
         <p className="mt-5 font-sans font-normal text-base text-center text-dark">
-          We have great experienced and friendly technicians to
+          We have great experienced and friendly technicians for
         </p>
         <div className="grid grid-cols-4 gap-4 mt-5 md:mt-10 w-full sm:w-11/12 md:w-full xl:w-10/12">
           {servicesWeOffer.map((v, i) => (

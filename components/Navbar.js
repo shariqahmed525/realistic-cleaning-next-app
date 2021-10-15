@@ -138,19 +138,25 @@ const Navbar = forwardRef(() => {
                     !scrolled && "custom-line-scrolled-color"
                   }`}
                 ></div>
-                <div className="border-t lg:border-t-0 border-gray-200 py-4 pl-5 sm:pl-10 lg:pl-0">
-                  <div
-                    className={`py-2.5 w-32 xs:w-36 rounded-md shadow-md ${
-                      scrolled
-                        ? "bg-secondary-my-theme"
-                        : "bg-secondary-my-theme"
-                    } flex justify-center items-center cursor-pointer hover:bg-dark-my-theme transition-all duration-500 ease-in-out`}
-                  >
-                    <p className="text-white text-xs xs:text-sm uppercase text-center">
-                      GET QUOTE
-                    </p>
+                <ScrollLink
+                  spy={true}
+                  offset={-100}
+                  smooth={true}
+                  duration={500}
+                  to={"get-quote"}
+                  onClick={_toggler}
+                  className="no-underline cursor-pointer"
+                >
+                  <div className="border-t lg:border-t-0 border-gray-200 py-4 pl-5 sm:pl-10 lg:pl-0">
+                    <div
+                      className={`py-2.5 w-32 xs:w-36 rounded-md shadow-md bg-secondary-my-theme flex justify-center items-center cursor-pointer hover:bg-dark-my-theme transition-all duration-500 ease-in-out`}
+                    >
+                      <p className="text-white text-xs xs:text-sm uppercase text-center">
+                        GET QUOTE
+                      </p>
+                    </div>
                   </div>
-                </div>
+                </ScrollLink>
               </ul>
             </nav>
           </div>

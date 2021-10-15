@@ -1,6 +1,6 @@
 import React from "react";
 // import Image from "next/image";
-import { Element } from "react-scroll";
+import { Link as ScrollLink, Element } from "react-scroll";
 
 // const services = [
 //   {
@@ -90,12 +90,23 @@ const Services = () => {
             </p>
           </div>
         </div>
-        <div
-          className={`py-2.5 w-40 xs:w-44 sm:w-52 mt-5 sm:mt-10 rounded-md bg-transparent flex justify-center items-center cursor-pointer hover:bg-dark-my-theme hover:shadow-md hover:text-white text-dark-my-theme transition-all duration-500 ease-in-out border border-dark-my-theme`}
-        >
-          <p className="text-xs xs:text-base uppercase text-center">
-            GET QUOTE
-          </p>
+        <div>
+          <ScrollLink
+            spy={true}
+            smooth={true}
+            offset={-100}
+            duration={500}
+            to={"get-quote"}
+            className="no-underline cursor-pointer"
+          >
+            <div
+              className={`py-2.5 w-40 xs:w-44 sm:w-52 mt-5 sm:mt-10 rounded-md flex justify-center items-center cursor-pointer bg-secondary-my-theme border shadow-md text-white hover:bg-dark-my-theme transition-all duration-500 ease-in-out`}
+            >
+              <p className="text-xs xs:text-base uppercase text-center">
+                GET SERVICE
+              </p>
+            </div>
+          </ScrollLink>
         </div>
         {/* <div className="grid grid-cols-4 gap-4 mt-20 w-full sm:w-11/12 md:w-full xl:w-10/12">
           {services.map((v, i) => (

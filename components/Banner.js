@@ -301,9 +301,18 @@ const Banner = () => {
               <p className="text-sm xs:text-base lg:text-base">
                 {item.description}
               </p>
-              <button className="px-12 py-3 text-sm xs:text-base bg-secondary-my-theme text-white rounded-full hover:bg-dark-my-theme">
-                {item.button}
-              </button>
+              <ScrollLink
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={500}
+                to={"get-quote"}
+                className="no-underline cursor-pointer"
+              >
+                <button className="px-12 py-3 text-sm xs:text-base bg-secondary-my-theme text-white rounded-full hover:bg-dark-my-theme">
+                  {item.button}
+                </button>
+              </ScrollLink>
             </div>
           </div>
         ))}

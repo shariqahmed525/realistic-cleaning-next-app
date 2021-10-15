@@ -65,6 +65,13 @@ const WhatsImportantDynamic = dynamic(
   }
 );
 
+const GetQuoteDynamic = dynamic(() => import("../components/GetQuote"), {
+  ssr: false,
+  loading: () => (
+    <p className="flex text-center justify-center align-center"></p>
+  ),
+});
+
 const ServicesWeOfferDynamic = dynamic(
   () => import("../components/ServicesWeOffer"),
   {
@@ -75,15 +82,15 @@ const ServicesWeOfferDynamic = dynamic(
   }
 );
 
-const ServicesIncludesDynamic = dynamic(
-  () => import("../components/ServicesIncludes"),
-  {
-    ssr: false,
-    loading: () => (
-      <p className="flex text-center justify-center align-center"></p>
-    ),
-  }
-);
+// const ServicesIncludesDynamic = dynamic(
+//   () => import("../components/ServicesIncludes"),
+//   {
+//     ssr: false,
+//     loading: () => (
+//       <p className="flex text-center justify-center align-center"></p>
+//     ),
+//   }
+// );
 
 const Home = () => {
   return (
@@ -110,7 +117,8 @@ const Home = () => {
       <BannerDynamic />
       <ServicesDynamic />
       <ServicesWeOfferDynamic />
-      <ServicesIncludesDynamic />
+      <GetQuoteDynamic />
+      {/* <ServicesIncludesDynamic /> */}
       {/* <WhatsImportantDynamic
         bgImage="url('/images/bg-4.webp')"
         title="WHAT IS THE IMPORTANCE OF CARPET CLEANING?"
