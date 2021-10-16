@@ -77,8 +77,11 @@ const GetQuote = () => {
               <p className="font-bold font-sans text-base sl:text-2xl md:text-3xl lg:text-4xl text-center lg:text-left text-white uppercase">
                 You’ll be on the schedule shortly.
               </p>
-              <p className="mt-3 font-base font-sans text-sm sl:text-base sm:text-xl text-center lg:text-left text-white">
-                Please fill out all fields to book your appointment.
+              <p className="mt-3 font-base font-sans text-sm sm:text-base text-center lg:text-left text-white">
+                Fill in all the required entry fields to finalize your schedule
+                and you're good to go or you can simply click down below for an
+                instant response. Further queries and other details are also
+                mentioned down there.
               </p>
             </div>
             <div className="col-span-2 lg:col-span-1 p-5 px-0 my-10 lg:my-0 flex flex-col justify-center items-center">
