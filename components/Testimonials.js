@@ -6,9 +6,9 @@ import "react-multi-carousel/lib/styles.css";
 
 const reviews = [
   {
-    name: "Mariana Salas",
-    text: "Highly recommended my carpet was incredibly dirty and they left it almost as new I am so happy with the service. They arrived on time and it was excelente service.",
-    image: "/images/t-1.webp",
+    name: "Michael Henderson",
+    text: "They were very professional. Did a wonder full job. Kept there appointment time even got me in early. Very pleased.",
+    image: "/images/duct-test-1.jpeg",
   },
   {
     name: "Roger Nkosi Dawson",
@@ -16,19 +16,14 @@ const reviews = [
     image: "/images/t-4.webp",
   },
   {
-    name: "Jenn Williams",
-    text: "Just had these guys clean my sofa bed... 10 years of dirt, glue, pen marks, dog hair and smell... and it’s like new. Came out same day and very reasonably priced . Highly recommend ",
-    image: "/images/t-3.webp",
+    name: "De-Ann Scheelar",
+    text: "We had a great experience with this service! The 2 man team was highly professional. They worked quickly and efficiently. They even took the time to explain the process. I will definitely be recommending the company (I actually already have!)",
+    image: "/images/duct-test-3.jpeg",
   },
   {
-    name: "Diane Frances",
-    text: "This service is very professional. The carpets we very stained and they now look wonderful.. I will use and recommend this service. They were friendly and very organized. They kept me informed on their arrival time.",
-    image: "/images/t-2.webp",
-  },
-  {
-    name: "Laurie Knight (Brinson)",
-    text: "Absolutely astounded that they were able to remove pet stains from my carpet, very friendly staff and affordable pricing. I would definitely not hesitate to call again",
-    image: "/images/t-5.webp",
+    name: "Laura Hoskyn Eeg",
+    text: "We hired this company through Roy. And they came here on time and did an awesome job. And Sam was very professional and friendly he also explained me what he was doing step by step. Highly recommended this company!",
+    image: "/images/duct-test-4.jpeg",
   },
 ];
 
