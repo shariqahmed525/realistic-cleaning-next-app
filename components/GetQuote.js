@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Formik } from "formik";
 import { Element } from "react-scroll";
 import emailSender from "../utils/emailSender";
+import { Link as ScrollLink } from "react-scroll";
 import { useToasts } from "react-toast-notifications";
 import { InfoSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
 
@@ -83,6 +84,20 @@ const GetQuote = () => {
                 instant response. Further queries and other details are also
                 mentioned down there.
               </p>
+              <div className="mt-4 inline">
+                <ScrollLink
+                  spy={true}
+                  smooth={true}
+                  offset={-100}
+                  duration={500}
+                  to={"get-quote"}
+                  className="no-underline cursor-pointer "
+                >
+                  <button className="px-10 py-2.5 font-sans text-xs xs:text-sm bg-secondary-my-theme text-white rounded-full">
+                    CLICK HERE
+                  </button>
+                </ScrollLink>
+              </div>
             </div>
             <div className="col-span-2 lg:col-span-1 p-5 px-0 my-10 lg:my-0 flex flex-col justify-center items-center">
               <Element
