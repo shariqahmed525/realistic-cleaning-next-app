@@ -95,6 +95,7 @@ const Navbar = forwardRef(() => {
                  }
               `}
         >
+          {/* <div className="bg-secondary-my-theme w-36 h-14"></div> */}
           <div className="col-start-1 col-end-13 2xl:col-start-2 2xl:col-end-12 flex flex-col lg:flex-row lg:items-center justify-between">
             <div
               className={`flex flex-1 flex-row justify-between items-center px-5 sm:px-10 md:pl-10 ${
