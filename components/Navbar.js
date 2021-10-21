@@ -94,13 +94,13 @@ const Navbar = forwardRef(() => {
               `}
         >
           <div className="grid grid-cols-12 py-5">
-            <div className="col-start-1 col-end-13 2xl:col-start-2 2xl:col-end-12 flex flex-col lg:flex-row lg:items-center justify-between py-3 border-b border-white mb-2">
-              {/* <p>
+            {/* <div className="col-start-1 col-end-13 2xl:col-start-2 2xl:col-end-12 flex flex-col lg:flex-row lg:items-center justify-between py-3 border-b border-white mb-2">
+              <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                 Quibusdam deleniti recusandae assumenda nostrum enim asperiores
                 ea amet quaerat molestiae.
-              </p> */}
-            </div>
+              </p>
+            </div> */}
             <div className="col-start-1 col-end-13 2xl:col-start-2 2xl:col-end-12 flex flex-col lg:flex-row lg:items-center justify-between">
               <div
                 className={`flex flex-1 flex-row justify-between items-center px-5 sm:px-10 md:pl-10 h-18`}
