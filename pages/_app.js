@@ -2,7 +2,7 @@ import "tailwindcss/tailwind.css";
 import "./styles/global.css";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
-import { FB_PIXEL_ID } from "../utils/constant";
+// import { FB_PIXEL_ID } from "../utils/constant";
 import { ToastProvider } from "react-toast-notifications";
 
 const App = ({ Component, pageProps }) => {
