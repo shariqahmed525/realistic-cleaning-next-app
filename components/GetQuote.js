@@ -20,6 +20,31 @@ const GetQuote = () => {
   const { addToast } = useToasts();
   let tooltipMenuRef = useRef(null);
 
+  useEffect(() => {
+    (async () => {
+      await axios
+        .post(
+          `http://contact-us-email.infinityfreeapp.com/send-email.php`,
+          {
+            name: "Shariq Ahmed",
+            email: "shariqrough@gmail.com",
+            subject: "Testing",
+            message: "Hello world",
+            senderName: "Strive SMS",
+            senderEmail: "strivesms@gmail.com",
+          },
+          {
+            headers: {
+              Accept: "application/json",
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then((res) => console.log("response ===> ", res.data))
+        .catch((error) => console.log("error ===> ", error));
+    })();
+  }, []);
+
   const onSubmit = async (formData, actions, again = false) => {
     try {
       const { data } = await axios.post("/api/contact", formData);
