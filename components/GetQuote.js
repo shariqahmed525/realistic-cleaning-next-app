@@ -24,7 +24,7 @@ const GetQuote = () => {
     (async () => {
       await axios
         .post(
-          `http://contact-us-email.infinityfreeapp.com/send-email.php`,
+          `https://5e47-119-152-233-140.ngrok.io/send-contact-mail`,
           {
             name: "Shariq Ahmed",
             email: "shariqrough@gmail.com",
