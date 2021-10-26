@@ -4,7 +4,6 @@ import Loader from "./Loader";
 import Image from "next/image";
 import { Formik } from "formik";
 import { Element } from "react-scroll";
-import Particles from "react-tsparticles";
 import emailSender from "../utils/emailSender";
 import { Link as ScrollLink } from "react-scroll";
 import { useToasts } from "react-toast-notifications";
@@ -116,7 +115,7 @@ const GetQuote = () => {
                   smooth={true}
                   offset={-100}
                   duration={500}
-                  to={"get-quote"}
+                  to={"contact-details"}
                   className="no-underline cursor-pointer"
                 >
                   <button className="px-10 py-2.5 font-sans text-xs xs:text-sm bg-secondary-my-theme text-white rounded-full">

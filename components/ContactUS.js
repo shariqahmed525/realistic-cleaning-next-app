@@ -4,9 +4,9 @@ import Loader from "./Loader";
 import { Formik } from "formik";
 import { Element } from "react-scroll";
 import emailSender from "../utils/emailSender";
+import { useToasts } from "react-toast-notifications";
 import { AiOutlineEnvironment } from "react-icons/ai";
 import { BsTelephone, BsEnvelope } from "react-icons/bs";
-import { useToasts } from "react-toast-notifications";
 import { ContactSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
 
 const INITIAL_VALUES = {
@@ -82,69 +82,71 @@ const ContactUS = () => {
             Let's Get In Touch
           </p>
           <div className="flex xl:grid grid-cols-2 mt-10 w-full flex-col-reverse xl:flex-col">
-            <div className="col-start-1 col-end-3 px-10 xl:col-start-1 xl:col-end-2 flex flex-col items-center justify-center w-full mt-0 sm:mt-8 xl:mt-0">
-              {addressess.map((v, i) => (
-                <div
-                  key={i}
-                  className="flex flex-col sm:flex-row sm:items-center mt-20 sm:mt-12 xl:mt-14 w-full justify-center"
-                >
-                  <iframe
-                    src={v.link}
-                    loading="lazy"
-                    allowFullScreen=""
-                    className="border-none w-full h-56 sm:w-56 sm:h-56 xl:w-64 xl:h-64 rounded-md sm:rounded-lg"
-                  />
-                  <div className="ml-0 sm:ml-10 mt-3 sm:mt-0">
-                    {/* <h3 className="text-white font-bold text-xl sm:text-2xl md:text-3xl text-center sm:text-left">
+            <Element name="contact-details">
+              <div className="col-start-1 col-end-3 px-10 xl:col-start-1 xl:col-end-2 flex flex-col items-center justify-center w-full mt-0 sm:mt-8 xl:mt-0">
+                {addressess.map((v, i) => (
+                  <div
+                    key={i}
+                    className="flex flex-col sm:flex-row sm:items-center mt-20 sm:mt-12 xl:mt-14 w-full justify-center"
+                  >
+                    <iframe
+                      src={v.link}
+                      loading="lazy"
+                      allowFullScreen=""
+                      className="border-none w-full h-56 sm:w-56 sm:h-56 xl:w-64 xl:h-64 rounded-md sm:rounded-lg"
+                    />
+                    <div className="ml-0 sm:ml-10 mt-3 sm:mt-0">
+                      {/* <h3 className="text-white font-bold text-xl sm:text-2xl md:text-3xl text-center sm:text-left">
                       {v.locationName}
                     </h3> */}
-                    {v.address && (
-                      <div className="mt-7 xl:mt-10">
+                      {v.address && (
+                        <div className="mt-7 xl:mt-10">
+                          <div className="flex flex-row items-center">
+                            <div className="w-4 xl:w-5">
+                              <AiOutlineEnvironment className="text-base xs:text-lg md:text-xl text-white" />
+                            </div>
+                            <p className="text-base sm:text-lg md:text-xl text-white ml-5 font-bold">
+                              {v.address}
+                            </p>
+                          </div>
+                        </div>
+                      )}
+                      <div className="mt-4 xl:mt-5">
                         <div className="flex flex-row items-center">
                           <div className="w-4 xl:w-5">
                             <AiOutlineEnvironment className="text-base xs:text-lg md:text-xl text-white" />
                           </div>
                           <p className="text-base sm:text-lg md:text-xl text-white ml-5 font-bold">
-                            {v.address}
+                            {v.locationName}
                           </p>
                         </div>
                       </div>
-                    )}
-                    <div className="mt-7 xl:mt-10">
-                      <div className="flex flex-row items-center">
-                        <div className="w-4 xl:w-5">
-                          <AiOutlineEnvironment className="text-base xs:text-lg md:text-xl text-white" />
-                        </div>
-                        <p className="text-base sm:text-lg md:text-xl text-white ml-5 font-bold">
-                          {v.locationName}
-                        </p>
-                      </div>
-                    </div>
 
-                    <div className="mt-4 xl:mt-5">
-                      <div className="flex flex-row items-center">
-                        <div className="w-4 xl:w-5">
-                          <BsTelephone className="text-base xs:text-lg md:text-xl text-white" />
+                      <div className="mt-4 xl:mt-5">
+                        <div className="flex flex-row items-center">
+                          <div className="w-4 xl:w-5">
+                            <BsTelephone className="text-base xs:text-lg md:text-xl text-white" />
+                          </div>
+                          <p className="text-base sm:text-lg md:text-xl text-white ml-5 font-bold">
+                            {v.number}
+                          </p>
                         </div>
-                        <p className="text-base sm:text-lg md:text-xl text-white ml-5 font-bold">
-                          {v.number}
-                        </p>
                       </div>
-                    </div>
-                    <div className="mt-4 xl:mt-5">
-                      <div className="flex flex-row items-center">
-                        <div className="w-4 xl:w-5">
-                          <BsEnvelope className="text-base xs:text-lg md:text-xl text-white" />
+                      <div className="mt-4 xl:mt-5">
+                        <div className="flex flex-row items-center">
+                          <div className="w-4 xl:w-5">
+                            <BsEnvelope className="text-base xs:text-lg md:text-xl text-white" />
+                          </div>
+                          <p className="text-base sm:text-lg md:text-xl text-white ml-5 font-bold">
+                            realisticcleaning1@gmail.com
+                          </p>
                         </div>
-                        <p className="text-base sm:text-lg md:text-xl text-white ml-5 font-bold">
-                          realisticcleaning1@gmail.com
-                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            </Element>
             <div className="col-start-1 col-end-3 px-10 xl:col-start-2 xl:col-end-3 flex flex-col xl:self-center mt-8 xl:mt-0 items-center justify-center">
               <Formik
                 validateOnChange={false}

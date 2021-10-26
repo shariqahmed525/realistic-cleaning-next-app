@@ -22,24 +22,100 @@ const faqs = [
     questions: {
       rows: [
         {
-          title: "How long will it take to clean my carpets?",
-          content:
-            "On average, it will take our technician's around 20 minutes per room. Sometimes, we have to repeat the process which can increase the duration of the service.",
+          title: "Can Flex Ducts be cleaned?",
+          content: "Yes with soft brush equipment.",
         },
         {
-          title: "How long will it take for my carpet to dry?",
-          content:
-            "It only takes around 5-7 hours for the carpet to dry. Our drying time can be affected by humidity, temperature and airflow to the carpets.",
+          title: "How often should I get my ducts cleaned?",
+          content: (
+            <p>
+              Minimum every 1-2 years.
+              <br />
+              <br />
+              Get ducts cleaned more frequently if...
+              <ul className="list-decimal">
+                <li>
+                  <span className="font-bold pr-2">*</span>Live in an older
+                  home.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Have pet.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Have some with
+                  respiratory illness at home *have allergies or live with
+                  someone with allergies.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Have problem with
+                  dust.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Have a smoker in the
+                  home.
+                </li>
+              </ul>
+            </p>
+          ),
         },
         {
-          title: "Are the products you use safe?",
-          content:
-            "Yes. The products that we use are entirely safe and child/pet-friendly. Although we do recommend that they are kept away from carpets and furnishings until they are completely dry.",
+          title: "How often should we get ducts cleaned?",
+          content: (
+            <p>
+              <ul className="list-decimal">
+                <li>
+                  <span className="font-bold pr-2">*</span>Visible dust in the
+                  ducts.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Increase in dust in
+                  your home.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Dust around the
+                  registers.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Increase in allergy
+                  symptoms.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Increase in
+                  respiratory discomfort
+                </li>
+              </ul>
+            </p>
+          ),
         },
         {
-          title: "Will you be able to remove all the stains from the carpet?",
-          content:
-            "We have the best professionals for the carpet stain removal. They have a better understanding of the sources of the stain and their chemical behaviour. They choose the method for removal accordingly and that helps in removing most of the types of stain. We do not take guarantee that all the stains will be removed, but there are rare chances that any of them will remain after our professionals have given the stain removal service.",
+          title: "What other ways to improve indoor air quality?",
+          content: (
+            <p>
+              There are some ways to improve indoor air quality and reduce air
+              pollution in your home.
+              <br />
+              <br />
+              <ul className="list-decimal">
+                <li>
+                  <span className="font-bold pr-2">*</span>Seal ducts.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Use great furnace
+                  filters.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Change filters often.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Use air purifier.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Air seal crawl space
+                  and attic.
+                </li>
+              </ul>
+            </p>
+          ),
         },
       ],
     },
@@ -48,19 +124,19 @@ const faqs = [
     questions: {
       rows: [
         {
-          title: "Do I need to vacuum before the technician arrives?",
+          title: "What kind of equipment do you people have?",
           content:
-            "To achieve optimum results, a light vacuuming of the high traffic areas is recommended but not required.",
+            "We have modified equipment, truck mounted machinery a 16 ft moving truck and a high pressure commercial vacuum with the immense pressure of 240 Psi.",
         },
         {
-          title: "Do you move furniture?",
+          title: "Are you people registered and certified?",
           content:
-            "We do not move furniture because carpet cleaning requires a single technician. The cleaner could help moving light furniture as long as it doesn't pose any extra risks.",
+            "Of course we are registered with Better Business Bureau and are also certified from the National Air Duct Cleaning Association. (NADCA)",
         },
         {
-          title: "Is the staff insured and reliable?",
+          title: "How long have you people been in business?",
           content:
-            "Yes, our technicians are professionally trained and certified.",
+            "We are not the new company in the market and we have been in the business for the last 15 years.",
         },
         {
           title: "How can I pay you?",
