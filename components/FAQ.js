@@ -42,9 +42,12 @@ const faqs = [
                   <span className="font-bold pr-2">*</span>Have pet.
                 </li>
                 <li>
-                  <span className="font-bold pr-2">*</span>Have some with
-                  respiratory illness at home *have allergies or live with
-                  someone with allergies.
+                  <span className="font-bold pr-2">*</span>Have someone with
+                  respiratory illness at home.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Have allergies or
+                  live with someone with allergies.
                 </li>
                 <li>
                   <span className="font-bold pr-2">*</span>Have problem with
@@ -124,23 +127,24 @@ const faqs = [
     questions: {
       rows: [
         {
-          title: "What kind of equipment do you people have?",
+          title: "What kind of equipment do you use?",
           content:
-            "We have modified equipment, truck mounted machinery a 16 ft moving truck and a high pressure commercial vacuum with the immense pressure of 240 Psi.",
+            "We usually use modified truck mounted equipment, a 16 feet moving truck and a high pressure commercial vacuum with the adjustable pressure up to 240 Psi. Sometimes we also have to use portable Hyper Vac equipment depending on the situation.",
         },
         {
           title: "Are you people registered and certified?",
           content:
-            "Of course we are registered with Better Business Bureau and are also certified from the National Air Duct Cleaning Association. (NADCA)",
+            "Of course we are registered with Better Business Bureau (BBB) and are also certified from the National Air Duct Cleaning Association (NADCA).",
         },
         {
-          title: "How long have you people been in business?",
+          title: "How long have you people been in this business?",
           content:
-            "We are not the new company in the market and we have been in the business for the last 15 years.",
+            "We have been in this business for more than 14 years and we also have a team of experienced technicians who are well trained to work through different situations.",
         },
         {
           title: "How can I pay you?",
-          content: "We take cash, cards and email transfer.",
+          content:
+            "Cash, Card & Online Transfer are being accepted by us. You can choose any of the following as per your ease.",
         },
       ],
     },

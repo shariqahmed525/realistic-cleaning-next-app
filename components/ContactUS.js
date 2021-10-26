@@ -25,7 +25,7 @@ const addressess = [
   },
   {
     link: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d425342.19152700173!2d-112.40522904150365!3d33.605671056373296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b12ed50a179cb%3A0x8c69c7f8354a1bac!2sPhoenix%2C%20AZ%2C%20USA!5e0!3m2!1sen!2s!4v1635222824872!5m2!1sen!2s",
-    number: "+1 202-358-0309",
+    number: "+1 602-833-4428",
     // address: "1171 Foxboro Ct, Bartlett, IL 60103, USA",
     locationName: "Phoenix Arizona",
   },
@@ -41,27 +41,28 @@ const ContactUS = () => {
   const { addToast } = useToasts();
 
   const onSubmit = async (formData, actions, again = false) => {
-    try {
-      const { data } = await axios.post("/api/contact", formData);
-      if (data?.success && data?.message) {
-        addToast(data?.message, {
-          appearance: "success",
-          autoDismiss: true,
-        });
-      } else {
-        addToast(UNIVERSAL_ERROR_MSG, {
-          appearance: "error",
-          autoDismiss: true,
-        });
-      }
-    } catch (error) {
-      onSubmit(formData, actions, true);
-    } finally {
-      if (!again && formData && Object.keys(formData).length !== 0) {
-        emailSender({ ...formData, isEmail: true });
-      }
-      actions.resetForm();
-    }
+    console.log("formData ===> ", formData);
+    // try {
+    //   const { data } = await axios.post("/api/contact", formData);
+    //   if (data?.success && data?.message) {
+    //     addToast(data?.message, {
+    //       appearance: "success",
+    //       autoDismiss: true,
+    //     });
+    //   } else {
+    //     addToast(UNIVERSAL_ERROR_MSG, {
+    //       appearance: "error",
+    //       autoDismiss: true,
+    //     });
+    //   }
+    // } catch (error) {
+    //   onSubmit(formData, actions, true);
+    // } finally {
+    //   if (!again && formData && Object.keys(formData).length !== 0) {
+    //     emailSender({ ...formData, isEmail: true });
+    //   }
+    //   actions.resetForm();
+    // }
   };
 
   return (
