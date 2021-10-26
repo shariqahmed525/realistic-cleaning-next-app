@@ -25,7 +25,7 @@ const WhatsImportant = ({ bgImage, title, text, showPartners, bgColor }) => {
     >
       <div
         className={`${bgImage && "bg-opacity-75"} ${
-          bgColor || "bg-secondary-my-theme"
+          bgColor || "bg-dark-my-theme"
         } py-10 md:py-16 px-5 flex flex-col justify-center items-center`}
       >
         <div className="w-full sm:w-11/12 md:w-full xl:w-10/12">

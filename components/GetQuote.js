@@ -4,6 +4,7 @@ import Loader from "./Loader";
 import Image from "next/image";
 import { Formik } from "formik";
 import { Element } from "react-scroll";
+import Particles from "react-tsparticles";
 import emailSender from "../utils/emailSender";
 import { Link as ScrollLink } from "react-scroll";
 import { useToasts } from "react-toast-notifications";
@@ -21,28 +22,28 @@ const GetQuote = () => {
   let tooltipMenuRef = useRef(null);
 
   useEffect(() => {
-    (async () => {
-      await axios
-        .post(
-          `https://5e47-119-152-233-140.ngrok.io/send-contact-mail`,
-          {
-            name: "Shariq Ahmed",
-            email: "shariqrough@gmail.com",
-            subject: "Testing",
-            message: "Hello world",
-            senderName: "Strive SMS",
-            senderEmail: "strivesms@gmail.com",
-          },
-          {
-            headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-          }
-        )
-        .then((res) => console.log("response ===> ", res.data))
-        .catch((error) => console.log("error ===> ", error));
-    })();
+    // (async () => {
+    //   await axios
+    //     .post(
+    //       `https://5e47-119-152-233-140.ngrok.io/send-contact-mail`,
+    //       {
+    //         name: "Shariq Ahmed",
+    //         email: "shariqrough@gmail.com",
+    //         subject: "Testing",
+    //         message: "Hello world",
+    //         senderName: "Strive SMS",
+    //         senderEmail: "strivesms@gmail.com",
+    //       },
+    //       {
+    //         headers: {
+    //           Accept: "application/json",
+    //           "Content-Type": "application/json",
+    //         },
+    //       }
+    //     )
+    //     .then((res) => console.log("response ===> ", res.data))
+    //     .catch((error) => console.log("error ===> ", error));
+    // })();
   }, []);
 
   const onSubmit = async (formData, actions, again = false) => {
@@ -94,12 +95,12 @@ const GetQuote = () => {
         style={{
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundImage: "url('/images/bg-2.webp')",
+          backgroundImage: "url('/images/bg-5.webp')",
         }}
       >
         <div className="bg-dark bg-opacity-80 w-full flex flex-col justify-center items-center">
           <div className="grid grid-cols-2 gap-0 lg:gap-4 w-full xl:w-10/12">
-            <div className="col-span-2 lg:col-span-1 pt-20 px-10 flex flex-col justify-center">
+            <div className="col-span-2 lg:col-span-1 pt-20 px-10 flex flex-col justify-center items-center lg:items-start">
               <p className="font-bold font-sans text-base sl:text-2xl md:text-3xl lg:text-4xl text-center lg:text-left text-white uppercase">
                 You’ll be on the schedule shortly.
               </p>
@@ -116,7 +117,7 @@ const GetQuote = () => {
                   offset={-100}
                   duration={500}
                   to={"get-quote"}
-                  className="no-underline cursor-pointer "
+                  className="no-underline cursor-pointer"
                 >
                   <button className="px-10 py-2.5 font-sans text-xs xs:text-sm bg-secondary-my-theme text-white rounded-full">
                     CLICK HERE

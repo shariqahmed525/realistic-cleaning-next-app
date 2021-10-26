@@ -79,7 +79,7 @@ const Navbar = forwardRef(() => {
             scroll > 500 ? "flex" : "hidden"
           }`}
         >
-          <div class="arrow"></div>
+          <div className="arrow"></div>
         </div>
       </ScrollLink>
 
