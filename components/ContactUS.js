@@ -2,11 +2,12 @@ import React from "react";
 import axios from "axios";
 import Loader from "./Loader";
 import { Formik } from "formik";
+import BASE_URL from "../config";
 import { Element } from "react-scroll";
-import emailSender from "../utils/emailSender";
 import { useToasts } from "react-toast-notifications";
 import { AiOutlineEnvironment } from "react-icons/ai";
 import { BsTelephone, BsEnvelope } from "react-icons/bs";
+import { SEND_CONTACT_EMAIL } from "../config/endpoints";
 import { ContactSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
 
 const INITIAL_VALUES = {
@@ -41,28 +42,31 @@ const ContactUS = () => {
   const { addToast } = useToasts();
 
   const onSubmit = async (formData, actions, again = false) => {
-    console.log("formData ===> ", formData);
-    // try {
-    //   const { data } = await axios.post("/api/contact", formData);
-    //   if (data?.success && data?.message) {
-    //     addToast(data?.message, {
-    //       appearance: "success",
-    //       autoDismiss: true,
-    //     });
-    //   } else {
-    //     addToast(UNIVERSAL_ERROR_MSG, {
-    //       appearance: "error",
-    //       autoDismiss: true,
-    //     });
-    //   }
-    // } catch (error) {
-    //   onSubmit(formData, actions, true);
-    // } finally {
-    //   if (!again && formData && Object.keys(formData).length !== 0) {
-    //     emailSender({ ...formData, isEmail: true });
-    //   }
-    //   actions.resetForm();
-    // }
+    try {
+      const { data } = await axios.post(
+        `${BASE_URL}${SEND_CONTACT_EMAIL}`,
+        formData
+      );
+      if (data?.success && data?.status && data?.data?.message) {
+        addToast(data?.data?.message, {
+          appearance: "success",
+          autoDismiss: true,
+        });
+      } else {
+        addToast(UNIVERSAL_ERROR_MSG, {
+          appearance: "error",
+          autoDismiss: true,
+        });
+      }
+    } catch (error) {
+      console.log("error ===> ", error?.message?.data?.response);
+      addToast(UNIVERSAL_ERROR_MSG, {
+        appearance: "error",
+        autoDismiss: true,
+      });
+    } finally {
+      actions.resetForm();
+    }
   };
 
   return (
