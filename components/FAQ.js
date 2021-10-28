@@ -62,33 +62,9 @@ const faqs = [
           ),
         },
         {
-          title: "How often should we get ducts cleaned?",
-          content: (
-            <p>
-              <ul className="list-decimal">
-                <li>
-                  <span className="font-bold pr-2">*</span>Visible dust in the
-                  ducts.
-                </li>
-                <li>
-                  <span className="font-bold pr-2">*</span>Increase in dust in
-                  your home.
-                </li>
-                <li>
-                  <span className="font-bold pr-2">*</span>Dust around the
-                  registers.
-                </li>
-                <li>
-                  <span className="font-bold pr-2">*</span>Increase in allergy
-                  symptoms.
-                </li>
-                <li>
-                  <span className="font-bold pr-2">*</span>Increase in
-                  respiratory discomfort
-                </li>
-              </ul>
-            </p>
-          ),
+          title: "What kind of equipment do you use?",
+          content:
+            "We usually use modified truck mounted equipment, a 16 feet moving truck and a high pressure commercial vacuum with the adjustable pressure up to 240 Psi. Sometimes we also have to use portable Hyper Vac equipment depending on the situation.",
         },
         {
           title: "What other ways to improve indoor air quality?",
@@ -127,11 +103,6 @@ const faqs = [
     questions: {
       rows: [
         {
-          title: "What kind of equipment do you use?",
-          content:
-            "We usually use modified truck mounted equipment, a 16 feet moving truck and a high pressure commercial vacuum with the adjustable pressure up to 240 Psi. Sometimes we also have to use portable Hyper Vac equipment depending on the situation.",
-        },
-        {
           title: "Are you people registered and certified?",
           content:
             "Of course we are registered with Better Business Bureau (BBB) and are also certified from the National Air Duct Cleaning Association (NADCA).",
@@ -140,6 +111,35 @@ const faqs = [
           title: "How long have you people been in this business?",
           content:
             "We have been in this business for more than 14 years and we also have a team of experienced technicians who are well trained to work through different situations.",
+        },
+        {
+          title: "Signs I need my ducts cleaned?",
+          content: (
+            <p>
+              <ul className="list-decimal">
+                <li>
+                  <span className="font-bold pr-2">*</span>Visible dust in the
+                  ducts.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Increase in dust in
+                  your home.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Dust around the
+                  registers.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Increase in allergy
+                  symptoms.
+                </li>
+                <li>
+                  <span className="font-bold pr-2">*</span>Increase in
+                  respiratory discomfort
+                </li>
+              </ul>
+            </p>
+          ),
         },
         {
           title: "How can I pay you?",

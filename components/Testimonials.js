@@ -7,7 +7,7 @@ import "react-multi-carousel/lib/styles.css";
 const reviews = [
   {
     name: "Michael Henderson",
-    text: "They were very professional. Did a wonder full job. Kept there appointment time even got me in early. Very pleased.",
+    text: "These guys were efficient, quick and didn't leave a single mess behind. Not only did they clean the vents and ducts but also taught me how to maintain and take proper care of the furnace. From now on i will only call you guys.",
     image: "/images/duct-test-1.jpeg",
   },
   {
