@@ -41,7 +41,7 @@ const addressess = [
 const ContactUS = () => {
   const { addToast } = useToasts();
 
-  const onSubmit = async (formData, actions, again = false) => {
+  const onSubmit = async (formData, actions) => {
     try {
       const { data } = await axios.post(
         `${BASE_URL}${SEND_CONTACT_EMAIL}`,

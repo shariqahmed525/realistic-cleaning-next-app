@@ -19,7 +19,7 @@ const InfoSchema = Yup.object().shape({
     .min(2, "Too Short!")
     .max(50, "Too Long!")
     .required("Please enter your name"),
-  phone: Yup.string()
+  contact: Yup.string()
     .matches(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/, {
       message: "Invalid contact no.!",
     })
@@ -27,9 +27,7 @@ const InfoSchema = Yup.object().shape({
   clean: Yup.string().required(
     "Please enter what thing would you like to clean"
   ),
-  location: Yup.string().required(
-    "Please enter your city/town name or postal code"
-  ),
+  zipCode: Yup.string().required("Please enter your zip code or city name"),
 });
 
 const UNIVERSAL_ERROR_MSG = "Sorry, something went wrong! Please try again!";

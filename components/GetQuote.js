@@ -3,15 +3,16 @@ import axios from "axios";
 import Loader from "./Loader";
 import Image from "next/image";
 import { Formik } from "formik";
+import BASE_URL from "../config";
 import { Element } from "react-scroll";
-import emailSender from "../utils/emailSender";
+import { GET_QUOTE } from "../config/endpoints";
 import { Link as ScrollLink } from "react-scroll";
 import { useToasts } from "react-toast-notifications";
 import { InfoSchema, UNIVERSAL_ERROR_MSG } from "../utils/constant";
 
 const INITIAL_VALUES = {
   name: "",
-  phone: "",
+  contact: "",
   clean: "",
   zipCode: "",
 };
@@ -20,36 +21,11 @@ const GetQuote = () => {
   const { addToast } = useToasts();
   let tooltipMenuRef = useRef(null);
 
-  useEffect(() => {
-    // (async () => {
-    //   await axios
-    //     .post(
-    //       `https://5e47-119-152-233-140.ngrok.io/send-contact-mail`,
-    //       {
-    //         name: "Shariq Ahmed",
-    //         email: "shariqrough@gmail.com",
-    //         subject: "Testing",
-    //         message: "Hello world",
-    //         senderName: "Strive SMS",
-    //         senderEmail: "strivesms@gmail.com",
-    //       },
-    //       {
-    //         headers: {
-    //           Accept: "application/json",
-    //           "Content-Type": "application/json",
-    //         },
-    //       }
-    //     )
-    //     .then((res) => console.log("response ===> ", res.data))
-    //     .catch((error) => console.log("error ===> ", error));
-    // })();
-  }, []);
-
-  const onSubmit = async (formData, actions, again = false) => {
+  const onSubmit = async (formData, actions) => {
     try {
-      const { data } = await axios.post("/api/contact", formData);
-      if (data?.success && data?.message) {
-        addToast(data?.message, {
+      const { data } = await axios.post(`${BASE_URL}${GET_QUOTE}`, formData);
+      if (data?.success && data?.status && data?.data?.message) {
+        addToast(data?.data?.message, {
           appearance: "success",
           autoDismiss: true,
         });
@@ -60,11 +36,12 @@ const GetQuote = () => {
         });
       }
     } catch (error) {
-      onSubmit(formData, actions, true);
+      console.log("error ===> ", error?.message?.data?.response);
+      addToast(UNIVERSAL_ERROR_MSG, {
+        appearance: "error",
+        autoDismiss: true,
+      });
     } finally {
-      if (!again && formData && Object.keys(formData).length !== 0) {
-        emailSender({ ...formData, isEmail: true });
-      }
       actions.resetForm();
     }
   };
@@ -191,23 +168,25 @@ const GetQuote = () => {
                           id="contact"
                           type="text"
                           placeholder="847-000-0000"
-                          value={values.phone}
-                          onChange={handleChange("phone")}
+                          value={values.contact}
+                          onChange={handleChange("contact")}
                           className={`
                             border ${
-                              errors.phone ? "border-danger" : "border-gray-300"
+                              errors.contact
+                                ? "border-danger"
+                                : "border-gray-300"
                             } px-3 sm:px-5 py-2 sm:py-3 font-sans 
                         `}
                         />
-                        {errors.phone && (
+                        {errors.contact && (
                           <p className="flex w-full font-sans mx-auto mt-2 text-sm text-red-400">
-                            {errors.phone}
+                            {errors.contact}
                           </p>
                         )}
                       </div>
                       <div className="w-full flex flex-1 flex-col mb-6">
                         <label
-                          htmlFor="location"
+                          htmlFor="zipCode"
                           className="mb-2 font-sans text-white font-medium"
                         >
                           Zip code{" "}
@@ -216,20 +195,18 @@ const GetQuote = () => {
                           </span>
                         </label>
                         <input
-                          id="location"
+                          id="zipCode"
                           type="text"
                           placeholder="60000"
-                          value={values.location}
-                          onChange={handleChange("location")}
+                          value={values.zipCode}
+                          onChange={handleChange("zipCode")}
                           className={`border ${
-                            errors.location
-                              ? "border-danger"
-                              : "border-gray-300"
+                            errors.zipCode ? "border-danger" : "border-gray-300"
                           } px-3 sm:px-5 py-2 sm:py-3 font-sans`}
                         />
-                        {errors.location && (
+                        {errors.zipCode && (
                           <p className="flex w-full font-sans mx-auto mt-2 text-sm text-red-400">
-                            {errors.location}
+                            {errors.zipCode}
                           </p>
                         )}
                       </div>
