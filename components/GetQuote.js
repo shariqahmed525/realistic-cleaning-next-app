@@ -216,7 +216,7 @@ const GetQuote = () => {
                           <span className="text-my-theme font-bold text-xl">
                             *
                           </span>
-                          <div className="tooltip ml-2">
+                          {/* <div className="tooltip ml-2">
                             <Image
                               width="16"
                               height="16"
@@ -228,14 +228,6 @@ const GetQuote = () => {
                               ref={tooltipMenuRef}
                               className="right text-white"
                             >
-                              {/* <div className="text-content">
-                              To generate an estimate we need to know no. of
-                              rugs, bedrooms, living rooms, steps of stairs,
-                              hallways, need measurements (for open spaces like
-                              basement), how many seating units (for
-                              couches/sofas) &amp; size of mattress (king,
-                              queen, single or double).
-                            </div> */}
                               <div className="text-content font-sans">
                                 To generate an estimate we need to know no. of
                                 furnaces, house size (in terms of square feet)
@@ -243,7 +235,7 @@ const GetQuote = () => {
                               </div>
                               <i></i>
                             </div>
-                          </div>
+                          </div> */}
                         </label>
                         <p className="text-white mb-2"></p>
                         <textarea
