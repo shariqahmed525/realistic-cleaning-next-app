@@ -250,7 +250,9 @@ const GetQuote = () => {
                           rows={3}
                           value={values.clean}
                           onChange={handleChange("clean")}
-                          placeholder="I would like to clean...."
+                          placeholder="To generate an estimate we need to know no. of
+                                furnaces, house size (in terms of square feet)
+                                dryer vent if needed? Thanks."
                           className={`border ${
                             errors.clean ? "border-danger" : "border-gray-300"
                           } px-3 sm:px-5 py-2 sm:py-3 font-sans`}
