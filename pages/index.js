@@ -105,7 +105,7 @@ const Home = () => {
         />
         <meta
           name="description"
-          content="Realistic Cleaning is a professional carpet cleaning company specializing in residential and commercial carpet and furniture steam cleaning services. To book your appointment contact us at 289-812-3444"
+          content="We offer duct cleaning services that help to remove all the contaminated and polluted air from your houses. It makes indoor air quality better and fresher for a healthier life. To book your appointment contact us at (708) 316-1276"
         />
         <meta name="robots" content="noindex,nofollow" />
         <meta

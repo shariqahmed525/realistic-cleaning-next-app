@@ -14,7 +14,7 @@ const servicesWeOffer = [
   },
   {
     name: "Deodorizer",
-    text: "We’re your trusted partner to help you remove odour from your space. We pride ourselves in removing odours from smoke, urine, vomit, pets, mould damage, biological and sewage.",
+    text: "We're your trusted partner to help you remove odour from your space. We pride ourselves in removing odours from smoke, urine, vomit, pets, mould damage, biological and sewage.",
     image: "/images/s-3.webp",
   },
   {
