@@ -32,8 +32,8 @@ const InfoSchema = Yup.object().shape({
 
 const UNIVERSAL_ERROR_MSG = "Sorry, something went wrong! Please try again!";
 
-const GA_TRACKING_ID = "G-WL1N8FXN2T";
-const FB_PIXEL_ID = "339113737618805";
+const GA_TRACKING_ID = "";
+const FB_PIXEL_ID = "";
 
 export {
   InfoSchema,
